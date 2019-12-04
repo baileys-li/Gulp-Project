@@ -24,5 +24,10 @@ function style() {
 
 }
 
+function watch() {
+    gulp.watch('./src/sass/**/*.sass', style)    
+}
+
 exports.style = style;
 exports.page = page;
+exports.watch = watch;

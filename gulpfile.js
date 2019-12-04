@@ -26,12 +26,8 @@ gulp.task('sass', function () {
             .pipe(gulp.dest('./public/css'))
 })
 
-// function watch() {
-//     browserSync.init({
-//         baseDir: "./public"
-//     });
-//     gulp.watch('./src/*.pug', page);
-//     gulp.watch('./src/sass/**/*.sass', style);
-// }
+gulp.task('watch', function () {
+    gulp.watch('./src/**/**/*.pug', gulp.series('pug'));
+    gulp.watch('./src/sass/**/*.sass', gulp.series('sass'));
+})
 
-// exports.watch = watch;

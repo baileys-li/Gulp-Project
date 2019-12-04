@@ -1,6 +1,6 @@
 const   gulp  = require('gulp'),
         sass  = require('gulp-sass'),
-        browserSync  = require('browser-sync'),
+        browserSync  = require('browser-sync').create(),
         pug  = require('gulp-pug');
 
 
@@ -21,11 +21,16 @@ function style() {
     return gulp.src('./src/sass/**/*.sass')
             .pipe(sass())
             .pipe(gulp.dest('./public/css'))
+            .pipe(browserSync.stream())
 
 }
 
 function watch() {
-    gulp.watch('./src/sass/**/*.sass', style)    
+    browserSync.init({
+        baseDir: "./public/"
+    });
+    gulp.watch('./src/*.pug', page);
+    gulp.watch('./src/sass/**/*.sass', style);
 }
 
 exports.style = style;

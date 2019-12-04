@@ -31,3 +31,16 @@ gulp.task('watch', function () {
     gulp.watch('./src/sass/**/*.sass', gulp.series('sass'));
 })
 
+gulp.task('serve', function () {
+    browserSync.init({
+        server: {
+            baseDir: './public'
+        }
+    });
+    browserSync.watch('public', browserSync.reload);
+})
+
+gulp.task('default', gulp.series(
+    gulp.parallel('pug','sass'),
+    gulp.parallel('watch','serve'),
+))

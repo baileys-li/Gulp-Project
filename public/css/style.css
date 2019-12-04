@@ -8,3 +8,10 @@ body {
 
 h1 {
   font-size: 40px; }
+
+.test1 {
+  height: 100vh; }
+
+.test2 {
+  height: 100vh;
+  background: magenta; }

@@ -24,7 +24,8 @@ gulp.task('sass', function () {
     return gulp.src('./src/sass/**/*.sass')
             .pipe(sass())
             .pipe(gulp.dest('./public/css'))
-})
+            .pipe(browserSync.stream());
+        })
 
 gulp.task('watch', function () {
     gulp.watch('./src/**/**/*.pug', gulp.series('pug'));
@@ -42,5 +43,5 @@ gulp.task('serve', function () {
 
 gulp.task('default', gulp.series(
     gulp.parallel('pug','sass'),
-    gulp.parallel('watch','serve'),
+    gulp.parallel('watch','serve')
 ))

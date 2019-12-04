@@ -14,5 +14,14 @@
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "pug": "^2.0.4"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baileys-li/Gulp-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baileys-li/Gulp-Project/issues"
+  },
+  "homepage": "https://github.com/baileys-li/Gulp-Project#readme"
 }

@@ -1,0 +1,9 @@
+section.advantages
+    .advantages__wraper.slider
+        h2.visually-hidden Наши преимущества
+        ul.advantages__list.slider__list
+            +advantagesItem('fast', 'Быстро', 'Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки')
+            +advantagesItem('cool','Круто','')
+            +advantagesItem('expensive','Дорого','Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?')
+
+        +sliderTogles("advantages")

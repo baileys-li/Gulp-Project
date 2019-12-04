@@ -1,0 +1,12 @@
+header.page-header
+    a.page-header__logo
+        img(src="/img/logotype-mobile.svg", width="226" height="30" alt="Барбершоп «Бородинский»").page-header__logo-image
+    nav.main-nav
+        button(type="button").main-nav__togle
+        .main-nav__wraper
+            ul.main-nav__list.site-list
+                +siteListItem('#', 'Главная', true)
+                +siteListItem('#', 'Наши работы')
+                +siteListItem('#', 'Записаться')
+                +siteListItem('#', 'Контакты')
+                +siteListItem('#', 'HTML Academy')

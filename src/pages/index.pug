@@ -8,109 +8,13 @@ html(lang="ru")
         link(rel="stylesheet", href="css/style.css")
         title Барбершоп «Бородинский»
     body
-        header.page-header
-            a.page-header__logo
-                img(src="/img/logotype-mobile.svg", width="226" height="30" alt="Барбершоп «Бородинский»").page-header__logo-image
-            nav.main-nav
-                button(type="button").main-nav__togle
-                .main-nav__wraper
-                    ul.main-nav__list.site-list
-                        +siteListItem('#', 'Главная', true)
-                        +siteListItem('#', 'Наши работы')
-                        +siteListItem('#', 'Записаться')
-                        +siteListItem('#', 'Контакты')
-                        +siteListItem('#', 'HTML Academy')
+        include ./includes/header
+        
         
         main.page-main
             h1.visually-hidden Барбершоп «Бородинский» — истинно мужская классика
-            section.stats
-                header.stats__header
-                    h2.visualy-hidden Статистика барбешопа
-                    b.stats__slogan Стрижка у нас это выгодно!
-                    p.stats__intro Мужская стрижка требует точного подхода. Обратимся к статистике:
-                    small.stats__legend.stats__legend--top
-                        sup *
-                        |  — приведённые данные ложь
-                table.stats__list
-                    tr
-                        td.stats__value 1 500
-                            sup *
-                        td.stats__field рублей <br> вложений
-                    tr
-                        td.stats__value 7 200
-                        td.stats__field секунд <br> времени мастера
-                    tr
-                        td.stats__value 90 000
-                        td.stats__field постриженных <br> волос
-                    tr
-                        td.stats__value 500 000 
-                            sup *
-                        td.stats__field лайков и <br> комплиментов
-                small.stats__legend.stats__legend--bottom
-                        sup *
-                        |  — приведённые данные ложь
-                
-            section.advantages
-                .advantages__wraper.slider
-                    h2.visually-hidden Наши преимущества
-                    ul.advantages__list.slider__list
-                        +advantagesItem('fast', 'Быстро', 'Мы делаем свою работу быстро! Два часа пролетят незаметно и Вы — счастливый обладатель стильной стрижки-минутки')
-                        +advantagesItem('cool','Круто','')
-                        +advantagesItem('expensive','Дорого','Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?')
-
-                    +sliderTogles("advantages")
-
-            section.news
-                h2.news__title Новости и акции
-                ul.news__list
-                    li.news__item
-                        time(datetime="2017-09-29").news__date
-                            b.news__day 29
-                            |  сент
-                        p.news__text Нам наконец завезли Ягермайстер! Теперь вы можете пропусить стаканчик во время стрижки.
-                    li.news__item
-                        time(datetime="2017-09-19").news__date
-                            b.news__day 19
-                            |  сент
-                        p.news__text В нашей команде пополнение, Борис «Бритва» Стригунец, пополнил наши стройные ряды. Спешите записаться!
-                    li.news__item
-                        time(datetime="2017-09-09").news__date
-                            b.news__day 9
-                            |  сент
-                        p.news__text Все дорожает, а наши стрижки нет! Как так? Приходите, постригитесь и узнаете, в чем здесь подвох!
-                a(href="#").news__to-all.button Показать всё
-
-            section.reviews
-                .reviews__wrapper.slider
-                    h2.reviews__title Отзывы о нас
-                    a(href="#").reviews__write.button Оставить свой
-
-                    .reviews__list.slider__list
-                        for each in [1,2,3]
-                            +reviewsItem('travis','Фото Трэвиса Баркера',"Трэвис Баркер", "Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!")
-                    
-                       
-                        button(type="button").reviews__prev Предыдущий отзыв
-                        button(type="button").reviews__next Следующий отзыв отзыв
-                    +sliderTogles("reviews")
-
-        footer.page-footer
-            .page-footer__wrapper
-                .page-footer__contacts.contacts
-                    b.contacts__title Барбершоп «Бородинский»
-                    p.contacts__text г. Санкт-Петербург, ул. Большая Конюшенная 19/8
-                    a(href="tel:+78125556666").contacts__phone 
-                        span.contacts__phone-mobile Тел.:
-                        |  +7 (812) 555-66-66
-                .page-footer__social.social
-                    b.social__title Давайте дружить!
-                    ul.social__list
-                        li.social__item
-                            a(href="#").social__link.social__link--vk Мы в Вконтакте
-                        li.social__item
-                            a(href="#").social__link.social__link--fb Мы в Фейсбуке
-                        li.social__item
-                            a(href="#").social__link.social__link--insta Мы в Инстаграме
-                .page-footer__copyright.copyright
-                    b.copyright__text Разработано:
-                    a(href="#").copyright__link HTML Academy
+            include ./includes/stats
+            include ./includes/advantages
+            include ./includes/news 
+            include ./includes/reviews
+            include ./includes/footer

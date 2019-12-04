@@ -1,3 +1,13 @@
+mixin siteListItem(href="#", text="ссылка", isActive = false)
+    - var className = "site-list__item";
+    if (isActive)
+        li(class= className +' ' + className+'--active')
+            a(href=href)= text
+    else
+        li(class=className)
+            a(href=href)= text
+
+            
 header.page-header
     a.page-header__logo
         img(src="/img/logotype-mobile.svg", width="226" height="30" alt="Барбершоп «Бородинский»").page-header__logo-image

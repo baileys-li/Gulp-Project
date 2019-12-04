@@ -1,3 +1,8 @@
+mixin advantagesItem(classMod = 'modifier', title = "Заголовок", desc = "Описание")
+    li(class="advantages__item advantages__item--" + classMod + " slider__item")
+        h3.advantages__title= title
+        p.advantages__description= desc
+
 section.advantages
     .advantages__wraper.slider
         h2.visually-hidden Наши преимущества

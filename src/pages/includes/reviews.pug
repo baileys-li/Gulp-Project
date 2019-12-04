@@ -1,3 +1,12 @@
+//- меня смущает семантика, попробую потом сделать через список и p.reviews__author-picture заменять на figure
+
+mixin reviewsItem(img, alt, name, text)
+    blockquote.reviews__item.slider__item
+        p.reviews__author-picture
+            img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
+        cite.reviews__author-name= name
+        p.reviews__text= text
+
 section.reviews
     .reviews__wrapper.slider
         h2.reviews__title Отзывы о нас

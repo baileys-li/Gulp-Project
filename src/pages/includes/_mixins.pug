@@ -1,0 +1,31 @@
+mixin siteListItem(href="#", text="ссылка", isActive = false)
+    - var className = "site-list__item";
+    if (isActive)
+        li(class= className +' ' + className+'--active')
+            a(href=href)= text
+    else
+        li(class=className)
+            a(href=href)= text
+
+
+mixin advantagesItem(classMod = 'modifier', title = "Заголовок", desc = "Описание")
+    li(class="advantages__item advantages__item--" + classMod + " slider__item")
+        h3.advantages__title= title
+        p.advantages__description= desc
+
+
+mixin sliderTogles(classMod)
+    p(class=classMod+"__toggles slider__togles")
+        button(type="button").slider__togle.slider__togle--active 1
+        button(type="button").slider__togle 2
+        button(type="button").slider__togle 3
+
+
+//- меня смущает семантика, попробую потом сделать через список и p.reviews__author-picture заменять на figure
+
+mixin reviewsItem(img, alt, name, text)
+    blockquote.reviews__item.slider__item
+        p.reviews__author-picture
+            img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
+        cite.reviews__author-name= name
+        p.reviews__text= text

@@ -10,9 +10,11 @@ mixin siteListItem(href="#", text="ссылка", isActive = false)
             
 header.page-header
     a.page-header__logo
-        img(src="/img/logotype-mobile.svg", width="226" height="30" alt="Барбершоп «Бородинский»").page-header__logo-image
+        include ../img/logo.svg
+           
     nav.main-nav
         button(type="button").main-nav__togle
+            span.visually-hidden Открыть меню
         .main-nav__wraper
             ul.main-nav__list.site-list
                 +siteListItem('/index.html', 'Главная', true)

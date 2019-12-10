@@ -3,15 +3,21 @@
     flex-direction: column
     &__logo
         height: 85px
+        text-align: center
+        & svg
+            width: 226px
+            height: 85px
+        &-barbershop, &-mustache 
+            display: none
+        
+            // display: none
+// @media (min-width: $tablet-width)
+//     .page-header
+//         &__logo
+//             order: 2
+//             height: 400px
 
-
-@media (min-width: $tablet-width)
-    .page-header
-        &__logo
-            order: 2
-            height: 400px
-
-@media (min-width: $desktop-width)
-    .page-header
-        &__logo
-            height: 648px
+// @media (min-width: $desktop-width)
+//     .page-header
+//         &__logo
+//             height: 648px

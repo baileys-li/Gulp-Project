@@ -1,0 +1,31 @@
+.main-nav
+    min-width: 320px
+    margin: 0 auto
+    &__list
+        +reset-list()
+
+@media (min-width: $tablet-width)
+    .main-nav
+        width: auto
+        margin: 0
+        &__wrapper
+            display: flex 
+            justify-content: space-between 
+            width: 640px
+            margin: 0 auto
+    
+    .site-list
+        width: 570px
+    
+    .user-list
+        width: 60px
+
+@media (min-width: $desktop-width)
+    .main-nav
+        &__wrapper
+            width: 960px
+    
+    .site-list
+        width: 780px
+    .user-list
+        width: 160px

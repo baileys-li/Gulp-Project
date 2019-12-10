@@ -21,7 +21,7 @@ const   gulp  = require('gulp'),
  * Compile .sass files 
  */
 gulp.task('sass', function () {
-    return gulp.src('./src/sass/**/*.sass')
+    return gulp.src('./src/sass/*.sass')
             .pipe(sass())
             .pipe(gulp.dest('./public/css'))
             .pipe(browserSync.stream());

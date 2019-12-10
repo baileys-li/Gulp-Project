@@ -10,14 +10,37 @@
         &-barbershop, &-mustache 
             display: none
         
-            // display: none
-// @media (min-width: $tablet-width)
-//     .page-header
-//         &__logo
-//             order: 2
-//             height: 400px
+@media (min-width: $tablet-width)
+    .page-header
+        background: #000
+        &__logo
+            order: 2
 
-// @media (min-width: $desktop-width)
-//     .page-header
-//         &__logo
-//             height: 648px
+            width: 100%
+            height: 400px
+
+            background-color: #000
+            background-image: url("/img/bg-header.jpg")
+            background-repeat: no-repeat
+            background-position: center -9px
+
+            & svg
+                display: block
+                width: 370px
+                height: auto
+                margin: 40px auto 0
+            &-barbershop
+                display: inline-block
+
+@media (min-width: $desktop-width)
+    .page-header
+        &__logo
+            height: 648px
+
+            background-position: center 0
+            background-size: cover
+
+            & svg
+                margin-top: 57px
+            &-mustache
+                display: inline-block

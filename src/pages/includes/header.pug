@@ -2,7 +2,7 @@ mixin siteListItem(href="#", text="ссылка", isActive = false)
     - var className = "site-list__item";
     if (isActive)
         li(class= className +' ' + className+'--active')
-            a(href=href)= text
+            a= text
     else
         li(class=className)
             a(href=href)= text
@@ -12,10 +12,10 @@ header.page-header
     a.page-header__logo
         include ../img/logo.svg
            
-    nav.main-nav
-        button(type="button").main-nav__togle
+    nav.main-nav.main-nav--closed.main-nav--nojs
+        button(type="button").main-nav__toggle
             span.visually-hidden Открыть меню
-        .main-nav__wraper
+        .main-nav__wrapper
             ul.main-nav__list.site-list
                 +siteListItem('/index.html', 'Главная', true)
                 +siteListItem('/works.html', 'Наши работы')
@@ -23,5 +23,8 @@ header.page-header
                 +siteListItem('#', 'Контакты')
                 +siteListItem('#', 'HTML Academy')
             ul.main-nav__list.user-list
-                li.main-nav__user-item
-                    a(href="#").main-nav__login Вход
+                li.user-list__item
+                    a(href="/login.html").user-list__login 
+                        include ../img/login.svg
+                    
+                        | Вход

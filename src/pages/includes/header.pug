@@ -1,7 +1,7 @@
 mixin siteListItem(href="#", text="ссылка")
     - var className = "site-list__item";
 
-    if (href == curentPage)
+    if (href == currentPage)
         li(class= className +' ' + className+'--active')
             a= text
     else

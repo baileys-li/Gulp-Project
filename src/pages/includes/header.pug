@@ -1,6 +1,7 @@
-mixin siteListItem(href="#", text="ссылка", isActive = false)
+mixin siteListItem(href="#", text="ссылка")
     - var className = "site-list__item";
-    if (isActive)
+
+    if (href == curentPage)
         li(class= className +' ' + className+'--active')
             a= text
     else
@@ -17,7 +18,7 @@ header.page-header
             span.visually-hidden Открыть меню
         .main-nav__wrapper
             ul.main-nav__list.site-list
-                +siteListItem('/index.html', 'Главная', true)
+                +siteListItem('/index.html', 'Главная')
                 +siteListItem('/works.html', 'Наши работы')
                 +siteListItem('/order.html', 'Записаться')
                 +siteListItem('#', 'Контакты')

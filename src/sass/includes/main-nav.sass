@@ -114,26 +114,39 @@
 
 
 
-// @media (min-width: $tablet-width)
-//     .main-nav
-//         width: auto
-//         margin: 0
-//         &__wrapper
-//             display: flex 
-//             justify-content: space-between 
-//             width: 640px
-//             margin: 0 auto
-    
-//     .site-list
-//         width: 570px
-    
-//     .user-list
-//         width: 60px
+@media (min-width: $tablet-width)
+    .main-nav
+        width: auto
+        margin: 0
 
-// @media (min-width: $desktop-width)
-//     .main-nav
-//         &__wrapper
-//             width: 960px
+        background: #000
+        &--opened &__wrapper
+            position: static
+            min-height: auto;
+            background-color: transparent
+        &__wrapper
+            // position: static
+            // left: 0
+            display: flex 
+            justify-content: space-between 
+            width: 640px
+            margin: 0 auto
+
+        &__toggle
+            display: none
+
+        &--closed
+            & .site-list__item, & .user-list__item
+                display: block
+    
+    
+    // .user-list
+    //     width: 60px
+
+@media (min-width: $desktop-width)
+    .main-nav
+        &__wrapper
+            width: 960px
     
 //     .site-list
 //         width: 780px

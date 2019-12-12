@@ -1,27 +1,87 @@
 .stats
-    width: 320px
-    margin: 0 auto
+    // width: 320px
+    // margin: 0 auto
     &__header
         padding: 30px 40px 25px
         background-color: #fff 
         color: #000
+    
+    &__slogan
+        display: block
+        margin-bottom: 15px
+
+        font-size: 30px
+        line-height: 30px
+        font-weight: bold
+        text-align: center
+        text-transform: uppercase
+        
+    &__intro
+        margin: 0
+        font-size: 20px
+        line-height: 27px
+        text-align: center
+
+    &__legend
+        display: block
+        font-size: 20px
+        line-height: 20px
+        &--bottom
+            padding: 20px 0 14px
+            text-align: center
+            color: rgba(255, 255, 255, 0.5)
+            background-color: $bg-darkgrey
+        &--top
+            display: none
+        & sup
+            top: -0.25em
+            font-size: 90%
+        
     &__list
         width: 100%
+        border-collapse: collapse
+        & tr
+            color: #fff
+            background-color: #404040
+            &:nth-child(2)
+                background-color: #4e4e4e
+            &:nth-child(3)
+                background-color: #353535
+            &:nth-child(4)
+                background-color: #404040
+    
+    &__value, &__field
+        width: 50%
+        padding: 20px 20px 19px
 
-@media (min-width: $tablet-width)
-    .stats
-        width: 640px
-        margin-top: -185px
-        &__list
-            display: flex
+        vertical-align: top
+    &__value
+        padding-right: 0px
+        font-size: 40px
+        line-height: 40px
+        & sup
+            top: -0.35em
+            margin-left: 5px
+    &__field
+        padding-left: 0
+        font-size: 18px
+        line-height: 18px
+        text-align: right
+
+// @media (min-width: $tablet-width)
+//     .stats
+//         width: 640px
+//         margin-top: -185px
+//         &__list
+//             display: flex
    
 
-@media (min-width: $desktop-width)
-    .stats
-        display: flex
-        width: 960px
-        margin-top: -160px
-        &__header
-            width: 240px
-        &__list
-            width: 640px
+// @media (min-width: $desktop-width)
+//     .stats
+//         display: flex
+//         width: 960px
+//         margin-top: -160px
+//         &__header
+//             width: 240px
+//         &__list
+//             width: 640px

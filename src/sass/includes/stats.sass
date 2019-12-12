@@ -68,20 +68,96 @@
         line-height: 18px
         text-align: right
 
-// @media (min-width: $tablet-width)
-//     .stats
-//         width: 640px
-//         margin-top: -185px
-//         &__list
-//             display: flex
+@media (min-width: $tablet-width)
+    .stats
+        position: relative
+        width: 640px / $tablet-width * 100%
+        max-width: 960px
+        margin: -185px auto 0
+        &__header
+            display: flex
+            flex-wrap: wrap
+            min-height: 129px
+            justify-content: space-between
+            // Язык облачка диалога
+            &::before
+                content: ''
+                position: absolute
+
+                top: 27px
+                left: -13px
+
+                border: 15px solid transparent
+                border-bottom-color: #fff
+                transform: rotate(45deg)
+
+        &__slogan
+            width: 240 / 640 * 100%  
+            margin-bottom: 18px
+
+            font-size: 40px
+            line-height: 40px
+            text-align: left
+            text-transform: none
+
+        &__intro
+            width: 210 / 640 * 100%
+            margin-top: 5px
+            padding-right: 47px
+            text-align: left 
+
+        &__legend
+            &--top
+                display: block
+                width: 260 / 640 * 100%
+                color: rgba(0, 0, 0, 0.5)
+            &--bottom
+                display: none    
+        &__list
+            display: flex
+            & tbody
+                display: flex
+                flex-wrap: wrap
+            & tr
+                width: 50%
+                box-sizing: border-box
+                padding: 25px 35px 28px
+            & td
+                display: block
+                width: auto
+                padding: 0
+        &__value
+            margin-bottom: 7px
+            font-size: 72px
+            line-height: 72px
+        &__field
+            font-size: 20px
+            line-height: 27px
+            text-align: left
+            & br
+                display: none
    
 
-// @media (min-width: $desktop-width)
-//     .stats
-//         display: flex
-//         width: 960px
-//         margin-top: -160px
-//         &__header
-//             width: 240px
-//         &__list
-//             width: 640px
+@media (min-width: $desktop-width)
+    .stats
+        display: flex
+        margin-top: -160px
+        &__header
+            display: block
+            width: 240px / 960px * 100%
+            &::header
+                top: 22px
+
+        &__slogan
+            width: auto
+            margin-bottom: 42px
+        &__intro
+            width: auto
+            margin-bottom: 32px
+            padding-right: 30px
+        &__legend
+            &--top
+                width: auto
+        &__list
+            display: flex
+            width: 640px / 960px * 100%

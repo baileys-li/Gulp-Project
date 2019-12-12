@@ -349,3 +349,86 @@ img {
   font-size: 18px;
   line-height: 18px;
   text-align: right; }
+
+@media (min-width: 768px) {
+  .stats {
+    position: relative;
+    width: 83.33333%;
+    max-width: 960px;
+    margin: -185px auto 0; }
+    .stats__header {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 129px;
+      justify-content: space-between; }
+      .stats__header::before {
+        content: '';
+        position: absolute;
+        top: 27px;
+        left: -13px;
+        border: 15px solid transparent;
+        border-bottom-color: #fff;
+        transform: rotate(45deg); }
+    .stats__slogan {
+      width: 37.5%;
+      margin-bottom: 18px;
+      font-size: 40px;
+      line-height: 40px;
+      text-align: left;
+      text-transform: none; }
+    .stats__intro {
+      width: 32.8125%;
+      margin-top: 5px;
+      padding-right: 47px;
+      text-align: left; }
+    .stats__legend--top {
+      display: block;
+      width: 40.625%;
+      color: rgba(0, 0, 0, 0.5); }
+    .stats__legend--bottom {
+      display: none; }
+    .stats__list {
+      display: flex; }
+      .stats__list tbody {
+        display: flex;
+        flex-wrap: wrap; }
+      .stats__list tr {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 25px 35px 28px; }
+      .stats__list td {
+        display: block;
+        width: auto;
+        padding: 0; }
+    .stats__value {
+      margin-bottom: 7px;
+      font-size: 72px;
+      line-height: 72px; }
+    .stats__field {
+      font-size: 20px;
+      line-height: 27px;
+      text-align: left; }
+      .stats__field br {
+        display: none; } }
+
+@media (min-width: 1200px) {
+  .stats {
+    display: flex;
+    margin-top: -160px; }
+    .stats__header {
+      display: block;
+      width: 25%; }
+      .stats__header::header {
+        top: 22px; }
+    .stats__slogan {
+      width: auto;
+      margin-bottom: 42px; }
+    .stats__intro {
+      width: auto;
+      margin-bottom: 32px;
+      padding-right: 30px; }
+    .stats__legend--top {
+      width: auto; }
+    .stats__list {
+      display: flex;
+      width: 66.66667%; } }

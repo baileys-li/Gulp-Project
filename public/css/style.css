@@ -416,18 +416,19 @@ img {
     display: flex;
     margin-top: -160px; }
     .stats__header {
-      display: block;
+      justify-content: flex-start;
+      flex-direction: column;
       width: 25%; }
       .stats__header::header {
         top: 22px; }
     .stats__slogan {
-      width: auto;
-      margin-bottom: 42px; }
+      width: auto; }
     .stats__intro {
       width: auto;
-      margin-bottom: 32px;
+      margin: 0;
       padding-right: 30px; }
     .stats__legend--top {
+      margin-top: auto;
       width: auto; }
     .stats__list {
       display: flex;

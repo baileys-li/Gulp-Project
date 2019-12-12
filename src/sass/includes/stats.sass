@@ -143,20 +143,22 @@
         display: flex
         margin-top: -160px
         &__header
-            display: block
+            justify-content: flex-start
+            flex-direction: column
+            
             width: 240px / 960px * 100%
             &::header
                 top: 22px
 
         &__slogan
             width: auto
-            margin-bottom: 42px
         &__intro
             width: auto
-            margin-bottom: 32px
+            margin: 0
             padding-right: 30px
         &__legend
             &--top
+                margin-top: auto
                 width: auto
         &__list
             display: flex

@@ -27,17 +27,18 @@ slides.forEach(function(item) {
 });
 
 function showSlide(i) {
+  toggles[i].classList.add("slider__toggle--active");
   slides[i].classList.add("slider__item--active");
+
   var prev = i > 0 ? i - 1 : slides.length - 1;
-  slides[prev].classList.remove("slider__item--active");
   toggles[prev].classList.remove("slider__toggle--active");
+  slides[prev].classList.remove("slider__item--active");
 }
 
 showSlide(0);
 
-toggles.forEach(function(item, i, array) {
-  item.addEventListener("click", function() {
-    item.classList.add("slider__toggle--active");
+toggles.forEach(function(item, i) {
+  item.addEventListener("click", function name(params) {
     showSlide(i);
-  });
+  }); 
 });

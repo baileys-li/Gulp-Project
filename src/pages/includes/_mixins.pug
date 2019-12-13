@@ -1,5 +1,5 @@
 mixin sliderToggles(classMod)
     p(class=classMod+"__toggles slider__toggles")
-        button(type="button").slider__toggle.slider__toggle--active 1
-        button(type="button").slider__toggle 2
-        button(type="button").slider__toggle 3
+        -for (var i = 0; i < 3; i++) {
+            button(type="button").slider__toggle 2
+        }

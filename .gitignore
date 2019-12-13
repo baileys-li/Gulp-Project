@@ -107,3 +107,5 @@ dist
 public/img/
 public/css/
 public/*.html
+public/css/style.css
+public/index.html

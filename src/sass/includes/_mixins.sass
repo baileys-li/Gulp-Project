@@ -3,3 +3,31 @@
     padding: 0
 
     list-style: none
+
+=light-mode()
+    background-color: $bg-lightgrey
+    color: #000
+
+=dark-mode()
+    background-color: $bg-darkgrey
+    color: #fff
+
+=subheader()
+    font-size: 30px
+    color: #000
+    font-weight: 700
+    text-transform: uppercase
+    line-height: 1
+    text-align: center
+
+=triangle-tail($height, $color)
+    &::after
+        position: absolute
+        content: ''
+        bottom: 1 - $height
+        left: 0
+        right: 0
+        height: $height
+        width: 100%
+        background-color: $color
+        clip-path: polygon(50% 100%, 0 0, 100% 0)

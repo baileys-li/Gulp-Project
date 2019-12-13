@@ -1,12 +1,13 @@
 .advantages
+    position: relative
+    +triangle-tail(35px, $bg-darkgrey)
     &__wraper
-        padding: 30px 0 0
+        padding: 30px 0 16px
     &__list
         +reset-list
 
     &__item
         position: relative
-
         padding: 95px + 30px 40px 25px
 
         text-align: center
@@ -40,3 +41,13 @@
     &__description
         font-size: 20px
         line-height: 1.35
+
+    // &::after
+
+        // position: absolute
+        // content: ''
+        // bottom: -34px
+        // height: 35px
+        // width: 100%
+        // background-color: $bg-darkgrey
+        // clip-path: polygon(50% 100%, 0 0, 100% 0)

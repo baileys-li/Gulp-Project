@@ -3,9 +3,9 @@
     // margin: 0 auto
     &__header
         padding: 30px 40px 25px
-        background-color: #fff 
+        background-color: #fff
         color: #000
-    
+
     &__slogan
         display: block
         margin-bottom: 15px
@@ -15,7 +15,7 @@
         font-weight: bold
         text-align: center
         text-transform: uppercase
-        
+
     &__intro
         margin: 0
         font-size: 20px
@@ -36,7 +36,7 @@
         & sup
             top: -0.25em
             font-size: 90%
-        
+
     &__list
         width: 100%
         border-collapse: collapse
@@ -49,7 +49,7 @@
                 background-color: #353535
             &:nth-child(4)
                 background-color: #404040
-    
+
     &__value, &__field
         width: 50%
         padding: 20px 20px 19px
@@ -59,7 +59,9 @@
         padding-right: 0px
         font-size: 40px
         line-height: 40px
+        font-weight: bold
         & sup
+            font-weight: normal
             top: -0.35em
             margin-left: 5px
     &__field
@@ -92,7 +94,7 @@
                 transform: rotate(45deg)
 
         &__slogan
-            width: 240 / 640 * 100%  
+            width: 240 / 640 * 100%
             margin-bottom: 18px
 
             font-size: 40px
@@ -104,7 +106,7 @@
             width: 210 / 640 * 100%
             margin-top: 5px
             padding-right: 47px
-            text-align: left 
+            text-align: left
 
         &__legend
             &--top
@@ -112,7 +114,7 @@
                 width: 260 / 640 * 100%
                 color: rgba(0, 0, 0, 0.5)
             &--bottom
-                display: none    
+                display: none
         &__list
             display: flex
             & tbody
@@ -136,7 +138,6 @@
             text-align: left
             & br
                 display: none
-   
 
 @media (min-width: $desktop-width)
     .stats
@@ -145,7 +146,7 @@
         &__header
             justify-content: flex-start
             flex-direction: column
-            
+
             width: 240px / 960px * 100%
             &::header
                 top: 22px

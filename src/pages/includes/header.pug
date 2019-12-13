@@ -10,20 +10,20 @@ mixin siteListItem(href="#", text="ссылка")
 
             
 header.page-header
-    a.page-header__logo
+    a._logo
         include ../img/logo.svg
            
-    nav.main-nav.main-nav--closed.main-nav--nojs
-        button(type="button").main-nav__toggle
+    nav.main-nav.-closed.-nojs
+        button(type="button")._toggle
             span.visually-hidden Открыть меню
-        .main-nav__wrapper
-            ul.main-nav__list.site-list
+        ._wrapper
+            ul._list.site-list
                 +siteListItem('/index.html', 'Главная')
                 +siteListItem('/works.html', 'Наши работы')
                 +siteListItem('/order.html', 'Записаться')
                 +siteListItem('/contacts.html', 'Контакты')
                 +siteListItem('#', 'HTML Academy')
-            ul.main-nav__list.user-list
+            ul._list.user-list
                 li.user-list__item
                     a(href="/login.html").user-list__login 
                         include ../img/login.svg

@@ -1,0 +1,20 @@
+.slider
+    &__toggles
+        display: flex
+        justify-content: space-between
+        width: 78px
+        margin: 0 auto
+    &__toggle
+        font-size: 0
+        width: 14px
+        height: 14px
+        border: 1px solid #fff
+        background: none
+        transition: background-color 0.2 linear
+        transform: rotate(45deg)
+        &--active
+            background-color: #fff
+    &__item
+        display: none
+        &--nojs, &--active
+            display: block

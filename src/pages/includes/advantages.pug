@@ -1,5 +1,5 @@
 mixin advantagesItem(classMod = 'modifier', title = "Заголовок", desc = "Описание")
-    li(class="advantages__item advantages__item--" + classMod + " slider__item")
+    li(class="advantages__item advantages__item--" + classMod + " slider__item slider__item--nojs")
         h3.advantages__title= title
         p.advantages__description= desc
 
@@ -11,4 +11,4 @@ section.advantages
             +advantagesItem('cool','Круто','Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино. Во всяком случае внешне.')
             +advantagesItem('expensive','Дорого','Наши мастера — профессионалы своего делаи не могут стоить дёшево. К тому же, разве цена не даёт определённый статус?')
 
-        +sliderTogles("advantages")
+        +sliderToggles("advantages")

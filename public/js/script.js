@@ -16,30 +16,37 @@ navToggle.addEventListener("click", function() {
 });
 
 // * Slider *
-var advantages = document.querySelector(".advantages");
+var advantages = document.querySelector(".advantages"),
+  reviews = document.querySelector(".reviews");
 
-var slider = advantages.querySelector(".slider");
-var slides = slider.querySelectorAll(".slider__item");
-var toggles = slider.querySelectorAll(".slider__toggle");
+function makeSlider(blockName) {
+  var slider = blockName.querySelector(".slider"),
+    slides = slider.querySelectorAll(".slider__item"),
+    toggles = slider.querySelectorAll(".slider__toggle"),
+    prev = 2;
 
-slides.forEach(function(item) {
-  item.classList.remove("slider__item--nojs");
-});
-var prev = 2;
-function showSlide(i) {
-  toggles[i].classList.add("slider__toggle--active");
-  slides[i].classList.add("slider__item--active");
+  slides.forEach(function(item) {
+    item.classList.remove("slider__item--nojs");
+  });
 
-  toggles[prev].classList.remove("slider__toggle--active");
-  slides[prev].classList.remove("slider__item--active");
+  function showSlide(i) {
+    toggles[i].classList.add("slider__toggle--active");
+    slides[i].classList.add("slider__item--active");
 
-  prev = i;
+    toggles[prev].classList.remove("slider__toggle--active");
+    slides[prev].classList.remove("slider__item--active");
+
+    prev = i;
+  }
+
+  showSlide(0);
+
+  toggles.forEach(function(item, i) {
+    item.addEventListener("click", function() {
+      showSlide(i);
+    });
+  });
 }
 
-showSlide(0);
-
-toggles.forEach(function(item, i) {
-  item.addEventListener("click", function() {
-    showSlide(i);
-  });
-});
+makeSlider(advantages);
+makeSlider(reviews);

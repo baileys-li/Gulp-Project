@@ -1,22 +1,20 @@
-//- меня смущает семантика, попробую потом сделать через список и p.reviews__author-picture заменять на figure
+//? меня смущает семантика, попробую потом сделать через список и p.reviews__author-picture заменять на figure
 
 mixin reviewsItem(img, alt, name, text)
-    blockquote.reviews__item.slider__item
+    blockquote.reviews__item.slider__item.slider__item--nojs
         p.reviews__author-picture
             img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
         cite.reviews__author-name= name
         p.reviews__text= text
 
 section.reviews
-    .reviews__wrapper.slider
-        h2.reviews__title Отзывы о нас
-        a(href="#").reviews__write.button Оставить свой
+    ._wrapper.slider
+        h2._title Отзывы о нас
+        a(href="#")._write.button Оставить свой
 
-        .reviews__list.slider__list
+        ._list.slider__list
+            button(type="button")._prev.button Предыдущий отзыв
             for each in [1,2,3]
                 +reviewsItem('travis','Фото Трэвиса Баркера',"Трэвис Баркер", "Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!")
-        
-            
-            button(type="button").reviews__prev Предыдущий отзыв
-            button(type="button").reviews__next Следующий отзыв отзыв
+            button(type="button")._next.button Следующий отзыв 
         +sliderToggles("reviews")

@@ -1,5 +1,8 @@
 mixin sliderToggles(classMod)
-    p(class=classMod+"__toggles slider__toggles")
-        -for (var i = 0; i < 3; i++) {
-            button(type="button").slider__toggle 2
-        }
+    div(class=classMod+"__toggles slider__toggles")
+        input(type="radio" checked).slider__toggle
+        input(type="radio").slider__toggle
+        input(type="radio").slider__toggle
+        //- each val in [1, 2, 3]
+            
+        //-     button(type="button").slider__toggle val

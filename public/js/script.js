@@ -25,20 +25,21 @@ var toggles = slider.querySelectorAll(".slider__toggle");
 slides.forEach(function(item) {
   item.classList.remove("slider__item--nojs");
 });
-
+var prev = 2;
 function showSlide(i) {
   toggles[i].classList.add("slider__toggle--active");
   slides[i].classList.add("slider__item--active");
 
-  var prev = i > 0 ? i - 1 : slides.length - 1;
   toggles[prev].classList.remove("slider__toggle--active");
   slides[prev].classList.remove("slider__item--active");
+
+  prev = i;
 }
 
 showSlide(0);
 
 toggles.forEach(function(item, i) {
-  item.addEventListener("click", function name(params) {
+  item.addEventListener("click", function() {
     showSlide(i);
-  }); 
+  });
 });

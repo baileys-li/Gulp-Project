@@ -1,14 +1,13 @@
-// ? меня смущает семантика, попробую потом сделать через список и p.reviews__author-picture заменять на figure
-
 mixin reviewsItem(img, alt, name, text)
     blockquote.reviews__item.slider__item.slider__item--nojs
-        p.reviews__author-picture
+        figure.reviews__author-picture
             img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
-        cite.reviews__author-name= name
-        p.reviews__text= text
+        .reviews__item-wrapper
+            cite.reviews__author-name= name
+            p.reviews__text= text
 
 section.reviews
-    ._wrapper.slider
+    ._wrapper.container.slider
         h2._title Отзывы о нас
         a(href="#")._write.button Оставить свой
 

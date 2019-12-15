@@ -16,13 +16,17 @@ navToggle.addEventListener("click", function() {
 });
 
 // * Slider *
+// Find block with slider
 var advantages = document.querySelector(".advantages"),
   reviews = document.querySelector(".reviews");
 
-function makeSlider(blockName) {
+// Function that make slider
+function makeSlider(blockName, controlButton = false) {
   var slider = blockName.querySelector(".slider"),
     slides = slider.querySelectorAll(".slider__item"),
     toggles = slider.querySelectorAll(".slider__toggle"),
+    prevSlideButton = blockName.querySelector(".reviews__prev"),
+    nextSlideButton = blockName.querySelector(".reviews__next"),
     prev = 2;
 
   slides.forEach(function(item) {
@@ -46,7 +50,25 @@ function makeSlider(blockName) {
       showSlide(i);
     });
   });
+
+  if (controlButton) {
+    prevSlideButton.addEventListener("click", function() {
+      if (prev == 0) {
+        showSlide(slides.length - 1);
+      } else {
+        showSlide(prev - 1);
+      }
+    });
+    nextSlideButton.addEventListener("click", function() {
+      if (prev == slides.length - 1) {
+        showSlide(0);
+      } else {
+        showSlide(prev + 1);
+      }
+    });
+  }
 }
 
+// make slider in next blocks
 makeSlider(advantages);
-makeSlider(reviews);
+makeSlider(reviews, true);

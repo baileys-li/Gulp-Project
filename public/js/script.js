@@ -34,6 +34,9 @@ function makeSlider(blockName, controlButton = false) {
   });
 
   function showSlide(i) {
+    if (i == prev) {
+      return;
+    }
     toggles[i].classList.add("slider__toggle--active");
     slides[i].classList.add("slider__item--active");
 

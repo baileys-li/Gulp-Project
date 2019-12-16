@@ -1,67 +1,67 @@
 .user-list
-    &__login
-        position: relative
-        display: block
+  &__login
+    position: relative
 
-        padding: 17px 21px
-        padding-left: 49px
-        line-height: 18px
+    display: block
+    padding: 17px 21px
+    padding-left: 49px
 
-        color: #fff
+    line-height: 18px
+    color: #ffffff
+    text-decoration: none
 
-        text-decoration: none
+    &-icon
+      position: absolute
+      top: 17px
+      left: 21px
 
-        &-icon
-            position: absolute
+      width: 16px
+      height: 16px
 
-            top: 17px
-            left: 21px
-
-            width: 16px
-            height: 16px
-
-            opacity: 0.5
-            & polygon
-                fill: #fff
+      opacity: 0.5
+      & polygon
+        fill: #ffffff
 
 @media (min-width: $tablet-width)
-    .user-list
-        width: 60px
-        &__login
-            width: 60px
-            height: 70px
-            padding: 0
+  .user-list
+    width: 60px
+    &__login
+      width: 60px
+      height: 70px
+      padding: 0
 
-            font-size: 0
-            &-icon
-                top: 29px
-                left: 12px
-            &:hover &-icon
-                opacity: 1
+      font-size: 0
+      &-icon
+        top: 29px
+        left: 12px
+      &:hover &-icon
+        opacity: 1
 
 @media (min-width: $desktop-width)
-    
-    .user-list
-        width: auto
-        max-width: 160px
-        &__login
-            position: relative
-            width: auto
-            height: auto
-            padding: 25px 30px 23px 50px
 
-            font-size: 18px
-            line-height: 24px
-            font-weight: bold
-            text-transform: uppercase
-            text-decoration: none
+  .user-list
+    width: auto
+    max-width: 160px
+    &__login
+      position: relative
 
-            &:hover
-                color: #000
-                background-color: #fff
-            &:hover &-icon
-                opacity: 0.5
-                & polygon
-                    fill: #000
-            &-icon
-                left: 15px
+      width: auto
+      height: auto
+      padding: 25px 30px 23px 50px
+
+      font-weight: bold
+      font-size: 18px
+      line-height: 24px
+      text-transform: uppercase
+      text-decoration: none
+
+      &:hover
+        color: #000000
+
+        background-color: #ffffff
+      &:hover &-icon
+        opacity: 0.5
+        & polygon
+          fill: #000000
+      &-icon
+        left: 15px

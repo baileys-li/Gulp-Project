@@ -1,46 +1,47 @@
 .page-header
-    display: flex
-    flex-direction: column
-    &__logo
-        height: 85px
-        text-align: center
-        & svg
-            width: 226px
-            height: 85px
-        &-barbershop, &-mustache 
-            display: none
-        
+  display: flex
+  flex-direction: column
+  &__logo
+    height: 85px
+
+    text-align: center
+    & svg
+      width: 226px
+      height: 85px
+    &-barbershop,
+    &-mustache
+      display: none
+
 @media (min-width: $tablet-width)
-    .page-header
-        background: #000
-        &__logo
-            order: 2
+  .page-header
+    background: #000000
+    &__logo
+      order: 2
+      width: 100%
+      height: 400px
 
-            width: 100%
-            height: 400px
+      background-color: #000000
+      background-image: url("/img/bg-header.jpg")
+      background-repeat: no-repeat
+      background-position: center -9px
 
-            background-color: #000
-            background-image: url("/img/bg-header.jpg")
-            background-repeat: no-repeat
-            background-position: center -9px
-
-            & svg
-                display: block
-                width: 370px
-                height: auto
-                margin: 40px auto 0
-            &-barbershop
-                display: inline-block
+      & svg
+        display: block
+        width: 370px
+        height: auto
+        margin: 40px auto 0
+      &-barbershop
+        display: inline-block
 
 @media (min-width: $desktop-width)
-    .page-header
-        &__logo
-            height: 648px
+  .page-header
+    &__logo
+      height: 648px
 
-            background-position: center 0
-            background-size: cover
+      background-position: center 0
+      background-size: cover
 
-            & svg
-                margin-top: 57px
-            &-mustache
-                display: inline-block
+      & svg
+        margin-top: 57px
+      &-mustache
+        display: inline-block

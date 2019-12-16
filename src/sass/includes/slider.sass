@@ -1,23 +1,27 @@
 .slider
-    &__toggles
-        display: flex
-        justify-content: space-between
-        width: 78px
-        margin-left: auto
-        margin-right: auto
-    &__toggle
-        font-size: 0
-        cursor: pointer
-        box-sizing: border-box
-        width: 14px
-        height: 14px
-        border: 1px solid #fff
-        background: none
-        transition: background-color 0.2s linear
-        transform: rotate(45deg)
-        &--active
-            background-color: #fff
-    &__item
-        display: none
-        &--nojs, &--active
-            display: flex
+  &__toggles
+    display: flex
+    justify-content: space-between
+    width: 78px
+    margin-right: auto
+    margin-left: auto
+  &__toggle
+    box-sizing: border-box
+    width: 14px
+    height: 14px
+
+    font-size: 0
+
+    background: none
+    border: 1px solid #ffffff
+    transform: rotate(45deg)
+    cursor: pointer
+
+    transition: background-color 0.2s linear
+    &--active
+      background-color: #ffffff
+  &__item
+    display: none
+    &--nojs,
+    &--active
+      display: flex

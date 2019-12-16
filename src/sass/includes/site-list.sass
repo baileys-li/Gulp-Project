@@ -1,73 +1,78 @@
 .site-list
-    font-weight: bold
-    & a
-        display: block
-        padding: 12px 21px 13px
+  font-weight: bold
+  & a
+    display: block
+    padding: 12px 21px 13px
 
-        font-size: 18px
-        line-height: 24px
-        color: #fff
-        text-transform: uppercase
-        text-decoration: none
+    font-size: 18px
+    line-height: 24px
+    color: #ffffff
+    text-transform: uppercase
+    text-decoration: none
 
-        background-color: $accent-color
-        border-top: 1px solid lighten($accent-color, 10%)
-        border-bottom: 1px solid darken($accent-color, 10%)
+    background-color: $accent-color
+    border-top: 1px solid lighten($accent-color, 10%)
+    border-bottom: 1px solid darken($accent-color, 10%)
 
-        &[href]
-            &:hover, &:focus
-                background-color: darken($accent-color, 10%)
-            &:active
-                color: rgba(255, 255, 255, 0.5)
-                background-color: darken($accent-color, 20%)
-                border-bottom: 1px solid darken($accent-color, 20%)
+    &[href]
+      &:hover,
+      &:focus
+        background-color: darken($accent-color, 10%)
+      &:active
+        color: rgba(255, 255, 255, 0.5)
+
+        background-color: darken($accent-color, 20%)
+        border-bottom: 1px solid darken($accent-color, 20%)
 
 @media (min-width: $tablet-width)
 
-    .site-list
-        display: flex
-        flex-wrap: wrap
-        justify-content: flex-start
-        flex-grow: 1
+  .site-list
+    display: flex
+    flex-grow: 1
+    flex-wrap: wrap
+    justify-content: flex-start
 
-        &__item
-            margin-right: 32px
-            &:last-child
-                margin-right: 0
-            &--active
-                position: relative
-                &::after
-                    content: ''
+    &__item
+      margin-right: 32px
+      &:last-child
+        margin-right: 0
+      &--active
+        position: relative
+        &::after
+          content: ""
+          position: absolute
+          right: 0
+          bottom: -3px
+          left: 0
 
-                    position: absolute
-                    right: 0
-                    bottom: -3px
-                    left: 0
+          height: 3px
 
-                    height: 3px
-                    background: $accent-color
-            & a
-                padding: 25px 0 23px
-                background: none
-                border: none
-                &[href]
-                    &:hover, &:focus
-                        color: $accent-color
-                        background-color: #000
-                    &:active
-                        color: rgba(255, 255, 255, 0.5)
+          background: $accent-color
+      & a
+        padding: 25px 0 23px
 
-                        border: none
+        background: none
+        border: none
+        &[href]
+          &:hover,
+          &:focus
+            color: $accent-color
+
+            background-color: #000000
+          &:active
+            color: rgba(255, 255, 255, 0.5)
+
+            border: none
 
 @media (min-width: $desktop-width)
 
-    .site-list
-        width: 780px
+  .site-list
+    width: 780px
 
-        &__item
-            margin-right: 0
-            &--active::after
-                right: 30px
-                left: 30px
-            & a
-                padding: 25px 31px 23px
+    &__item
+      margin-right: 0
+      &--active::after
+        right: 30px
+        left: 30px
+      & a
+        padding: 25px 31px 23px

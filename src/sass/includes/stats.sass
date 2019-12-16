@@ -1,164 +1,180 @@
 .stats
-    &__header
-        padding: 30px 40px 25px
-        background-color: #fff
-        color: #000
+  &__header
+    padding: 30px 40px 25px
 
-    &__slogan
-        display: block
-        margin-bottom: 15px
+    color: #000000
 
-        font-size: 30px
-        line-height: 30px
-        font-weight: bold
-        text-align: center
-        text-transform: uppercase
+    background-color: #ffffff
 
-    &__intro
-        margin: 0
-        font-size: 20px
-        line-height: 27px
-        text-align: center
+  &__slogan
+    display: block
+    margin-bottom: 15px
 
-    &__legend
-        display: block
-        font-size: 20px
-        line-height: 20px
-        &--bottom
-            padding: 20px 0 14px
-            text-align: center
-            color: rgba(255, 255, 255, 0.5)
-            background-color: $bg-darkgrey
-        &--top
-            display: none
-        & sup
-            top: -0.25em
-            font-size: 90%
+    font-weight: bold
+    font-size: 30px
+    line-height: 30px
+    text-align: center
+    text-transform: uppercase
 
-    &__list
-        width: 100%
-        border-collapse: collapse
-        & tr
-            color: #fff
-            background-color: #404040
-            &:nth-child(2)
-                background-color: #4e4e4e
-            &:nth-child(3)
-                background-color: #353535
-            &:nth-child(4)
-                background-color: #404040
+  &__intro
+    margin: 0
 
-    &__value, &__field
-        width: 50%
-        padding: 20px 20px 19px
+    font-size: 20px
+    line-height: 27px
+    text-align: center
 
-        vertical-align: top
-    &__value
-        padding-right: 0px
-        font-size: 40px
-        line-height: 40px
-        font-weight: bold
-        & sup
-            font-weight: normal
-            top: -0.35em
-            margin-left: 5px
-    &__field
-        padding-left: 0
-        font-size: 18px
-        line-height: 18px
-        text-align: right
+  &__legend
+    display: block
+
+    font-size: 20px
+    line-height: 20px
+    &--bottom
+      padding: 20px 0 14px
+
+      text-align: center
+      color: rgba(255, 255, 255, 0.5)
+
+      background-color: $bg-darkgrey
+    &--top
+      display: none
+    & sup
+      top: -0.25em
+
+      font-size: 90%
+
+  &__list
+    width: 100%
+
+    border-collapse: collapse
+    & tr
+      color: #ffffff
+
+      background-color: #404040
+      &:nth-child(2)
+        background-color: #4e4e4e
+      &:nth-child(3)
+        background-color: #353535
+      &:nth-child(4)
+        background-color: #404040
+
+  &__value,
+  &__field
+    width: 50%
+    padding: 20px 20px 19px
+
+    vertical-align: top
+  &__value
+    padding-right: 0
+
+    font-weight: bold
+    font-size: 40px
+    line-height: 40px
+    & sup
+      top: -0.35em
+
+      margin-left: 5px
+
+      font-weight: normal
+  &__field
+    padding-left: 0
+
+    font-size: 18px
+    line-height: 18px
+    text-align: right
 
 @media (min-width: $tablet-width)
-    .stats
-        position: relative
-        width: 640px / $tablet-width * 100%
-        max-width: 960px
-        margin: -185px auto 0
-        &__header
-            display: flex
-            flex-wrap: wrap
-            min-height: 129px
-            justify-content: space-between
-            // Язык облачка диалога
-            &::before
-                content: ''
-                position: absolute
+  .stats
+    position: relative
 
-                top: 27px
-                left: -13px
+    width: 640px / $tablet-width * 100%
+    max-width: 960px
+    margin: -185px auto 0
+    &__header
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      min-height: 129px
+      // Язык облачка диалога
+      &::before
+        content: ""
+        position: absolute
+        top: 27px
+        left: -13px
 
-                border: 15px solid transparent
-                border-bottom-color: #fff
-                transform: rotate(45deg)
+        border: 15px solid transparent
+        border-bottom-color: #ffffff
+        transform: rotate(45deg)
 
-        &__slogan
-            width: 240 / 640 * 100%
-            margin-bottom: 18px
+    &__slogan
+      width: 240 / 640 * 100%
+      margin-bottom: 18px
 
-            font-size: 40px
-            line-height: 40px
-            text-align: left
-            text-transform: none
+      font-size: 40px
+      line-height: 40px
+      text-align: left
+      text-transform: none
 
-        &__intro
-            width: 210 / 640 * 100%
-            margin-top: 5px
-            padding-right: 47px
-            text-align: left
+    &__intro
+      width: 210 / 640 * 100%
+      margin-top: 5px
+      padding-right: 47px
 
-        &__legend
-            &--top
-                display: block
-                width: 260 / 640 * 100%
-                color: rgba(0, 0, 0, 0.5)
-            &--bottom
-                display: none
-        &__list
-            display: flex
-            & tbody
-                display: flex
-                flex-wrap: wrap
-            & tr
-                width: 50%
-                box-sizing: border-box
-                padding: 25px 35px 28px
-            & td
-                display: block
-                width: auto
-                padding: 0
-        &__value
-            margin-bottom: 7px
-            font-size: 72px
-            line-height: 72px
-        &__field
-            font-size: 20px
-            line-height: 27px
-            text-align: left
-            & br
-                display: none
+      text-align: left
+
+    &__legend
+      &--top
+        display: block
+        width: 260 / 640 * 100%
+
+        color: rgba(0, 0, 0, 0.5)
+      &--bottom
+        display: none
+    &__list
+      display: flex
+      & tbody
+        display: flex
+        flex-wrap: wrap
+      & tr
+        box-sizing: border-box
+        width: 50%
+        padding: 25px 35px 28px
+      & td
+        display: block
+        width: auto
+        padding: 0
+    &__value
+      margin-bottom: 7px
+
+      font-size: 72px
+      line-height: 72px
+    &__field
+      font-size: 20px
+      line-height: 27px
+      text-align: left
+      & br
+        display: none
 
 @media (min-width: $desktop-width)
-    .stats
-        display: flex
-        margin-top: -160px
-        &__header
-            justify-content: flex-start
-            flex-direction: column
+  .stats
+    display: flex
+    margin-top: -160px
+    &__header
+      flex-direction: column
+      justify-content: flex-start
+      width: 240px / 960px * 100%
+      &::before
+        top: 22px
 
-            width: 240px / 960px * 100%
-            &::header
-                top: 22px
-
-        &__slogan
-            width: auto
-        &__intro
-            width: auto
-            margin: 0
-            padding-right: 30px
-        &__legend
-            &--top
-                margin-top: auto
-                width: auto
-        &__list
-            display: flex
-            width: 640px / 960px * 100%
+    &__slogan
+      width: auto
+    &__intro
+      width: auto
+      margin: 0
+      padding-right: 30px
+    &__legend
+      &--top
+        width: auto
+        margin-top: auto
+    &__list
+      display: flex
+      width: 640px / 960px * 100%

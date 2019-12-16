@@ -1,130 +1,135 @@
 .main-nav
-    position: relative
-    min-height: 51px
+  position: relative
 
-    background-color: $accent-color
-    &__toggle
-        position: absolute
-        top: 0
-        right: 0
-        z-index: 2
+  min-height: 51px
 
-        display: block
+  background-color: $accent-color
+  &__toggle
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 2
 
-        width: 70px
-        height: 50px
+    display: block
+    width: 70px
+    height: 50px
 
-        background-color: darken($accent-color, 10%)
+    background-color: darken($accent-color, 10%)
+    border: none
+    cursor: pointer
 
-        cursor: pointer
-        border: none
+    &:hover,
+    &:focus,
+    &:active
+      background-color: darken($accent-color, 20%)
 
-        &:hover, &:focus, &:active
-            background-color: darken($accent-color, 20%)
+  // closed toggle
+  &--closed &__toggle::before
+    content: ""
+    position: absolute
+    top: 15px
+    left: 17px
 
-    // closed toggle
-    &--closed &__toggle::before
-        content: ""
+    width: 36px
+    height: 2px
 
-        position: absolute
-        top: 15px
-        left: 17px
+    background-color: #ffffff
+    box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff
+  &--closed &__toggle:active::before
+    background-color: rgba(255, 255, 255, 0.3)
+    box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3)
 
-        width: 36px
-        height: 2px
+  // opened toggle
+  &--opened &__toggle
+    top: 0
+    right: auto
+    left: 0
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      top: 23px
+      left: 18px
 
-        background-color: #ffffff
-        box-shadow: 0 8px 0 0 #ffffff, 0 16px 0 0 #ffffff
-    &--closed &__toggle:active::before
+      width: 36px
+      height: 2px
+
+      background-color: #ffffff
+
+    &::before
+      box-shadow: none
+      transform: rotate(45deg)
+
+    &::after
+      transform: rotate(-45deg)
+    &:active
+      &::before,
+      &::after
         background-color: rgba(255, 255, 255, 0.3)
-        box-shadow: 0 8px 0 0 rgba(255, 255, 255, 0.3), 0 16px 0 0 rgba(255, 255, 255, 0.3)
 
-    // opened toggle
-    &--opened &__toggle
-        top: 0
-        right: auto
-        left: 0
-        &::before, &::after
-            content: ""
+  &__list
+    +reset-list()
 
-            position: absolute
-            top: 23px
-            left: 18px
+  &--closed .site-list__item
+    display: none
 
-            width: 36px
-            height: 2px
+  &--active
+    display: block
 
-            background-color: #fff
+    text-align: center
 
-        &::before
-            transform: rotate(45deg)
-            box-shadow: none
+  &--closed .user-list__item
+    display: none
 
-        &::after
-            transform: rotate(-45deg)
-        &:active
-            &::before, &::after
-                background-color: rgba(255, 255, 255, 0.3)
+  &--opened &__wrapper
+    position: absolute
+    top: 0
+    right: 0
+    left: 70px
+    z-index: 5
 
-    &__list
-        +reset-list()
+    min-height: calc(100vh - 85px)
 
-    &--closed .site-list__item
-        display: none
+    background-color: darken($accent-color, 5%)
 
-        &--active
-            display: block
-            text-align: center
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
 
-    &--closed .user-list__item
-        display: none
+      width: 7px
+      height: 100%
 
-    &--opened &__wrapper
-        position: absolute
-        top: 0
-        right: 0
-        left: 70px
-        z-index: 5
+      box-shadow: inset 4px 0 4px -2px rgba(0, 0, 0, 0.4)
 
-        height: calc(100vh - 85px)
-
-        background-color: darken($accent-color, 5%)
-
-        &::before
-            content: ""
-
-            position: absolute
-            top: 0
-            left: 0
-            z-index: 2
-
-            width: 7px
-            height: 100%
-            box-shadow: inset 4px 0 4px -2px rgba(0, 0, 0, 0.4)
-
-    &--nojs .site-list__item
-        display: block
+  &--nojs .site-list__item
+    display: block
 
 @media (min-width: $tablet-width)
-    .main-nav
-        width: auto
-        margin: 0
+  .main-nav
+    width: auto
+    margin: 0
 
-        background: #000
-        &--opened &__wrapper
-            position: static
-            min-height: auto
-            background-color: transparent
-        &__wrapper
-            display: flex
-            justify-content: space-between
-            width: 640/768 * 100%
-            max-width: 960px
-            margin: 0 auto
+    background: #000000
+    &--opened &__wrapper
+      position: static
 
-        &__toggle
-            display: none
+      min-height: auto
 
-        &--closed
-            & .site-list__item, & .user-list__item
-                display: block
+      background-color: transparent
+    &__wrapper
+      display: flex
+      justify-content: space-between
+      width: 640/768 * 100%
+      max-width: 960px
+      margin: 0 auto
+
+    &__toggle
+      display: none
+
+    &--closed
+      & .site-list__item,
+      & .user-list__item
+        display: block

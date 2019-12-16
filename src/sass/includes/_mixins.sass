@@ -1,40 +1,45 @@
 =reset-list()
-    margin: 0
-    padding: 0
+  margin: 0
+  padding: 0
 
-    list-style: none
+  list-style: none
 
 =light-mode()
-    background-color: $bg-lightgrey
-    color: #000
+  color: #000000
+
+  background-color: $bg-lightgrey
 
 =dark-mode()
-    background-color: $bg-darkgrey
-    color: #f7f4f1
+  color: #f7f4f1
+
+  background-color: $bg-darkgrey
 
 =subheader()
-    font-size: 30px
-    color: #000
-    font-weight: 700
-    text-transform: uppercase
-    line-height: 1
-    text-align: center
-    @media (min-width: $tablet-width)
-        font-size: 40px
-        text-align: left
+  font-weight: 700
+  font-size: 30px
+  line-height: 1
+  text-align: center
+  color: #000000
+  text-transform: uppercase
+  @media (min-width: $tablet-width)
+    font-size: 40px
+    text-align: left
 
 =triangle-tail($height, $color)
-    &::after
-        position: absolute
-        content: ''
-        bottom: - $height
-        left: 0
-        right: 0
-        height: $height
-        width: 100%
-        background-color: $color
-        clip-path: polygon(50% 100%, 0 0, 100% 0)
+  &::after
+    content: ""
+    position: absolute
+    right: 0
+    bottom: - $height
+    left: 0
+
+    width: 100%
+    height: $height
+
+    background-color: $color
+
+    clip-path: polygon(50% 100%, 0 0, 100% 0)
 
 =tablet-container()
-    width: 640px / $tablet-width * 100%
-    max-width: 960px
+  width: 640px / $tablet-width * 100%
+  max-width: 960px

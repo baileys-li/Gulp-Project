@@ -1,20 +1,20 @@
 mixin reviewsItem(img, alt, name, text)
-    blockquote.reviews__item.slider__item.slider__item--nojs
-        figure.reviews__author-picture
-            img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
-        .reviews__item-wrapper
-            cite.reviews__author-name= name
-            p.reviews__text= text
+  blockquote.reviews__item.slider__item.slider__item--nojs
+    figure.reviews__author-picture
+      img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
+    .reviews__item-wrapper
+      cite.reviews__author-name= name
+      p.reviews__text= text
 
 section.reviews
-    ._wrapper.container.slider
-        h2._title Отзывы о нас
-        a(href="#")._write.button Оставить свой
+  ._wrapper.container.slider
+    h2._title Отзывы о нас
+    a(href="#")._write.button Оставить свой
 
-        ._list.slider__list
-            button(type="button")._prev.button Предыдущий отзыв
-            +reviewsItem('travis','Фото Трэвиса Баркера',"Трэвис Баркер", "Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!")
-            +reviewsItem('travis','Фото Трэвиса Баркера', "Трэвис Баркер", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.") 
-            +reviewsItem('travis','Фото Трэвиса Баркера',"Трэвис Баркер", "Тупо спасибо!")
-            button(type="button")._next.button Следующий отзыв 
-        +sliderToggles("reviews")
+    ._list.slider__list
+      button(type="button")._prev.button Предыдущий отзыв
+      +reviewsItem('travis','Фото Трэвиса Баркера',"Трэвис Баркер", "Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!")
+      +reviewsItem('travis','Фото Трэвиса Баркера', "Трэвис Баркер", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+      +reviewsItem('travis','Фото Трэвиса Баркера',"Трэвис Баркер", "Тупо спасибо!")
+      button(type="button")._next.button Следующий отзыв
+    +sliderToggles("reviews")

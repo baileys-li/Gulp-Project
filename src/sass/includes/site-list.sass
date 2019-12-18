@@ -53,16 +53,16 @@
 
         background: none
         border: none
-        &[href]
-          &:hover,
-          &:focus
-            color: $accent-color
+      & a[href]
+        &:hover,
+        &:focus
+          color: $accent-color
 
-            background-color: #000000
-          &:active
-            color: rgba(255, 255, 255, 0.5)
+          background-color: #000000
+        &:active
+          color: rgba(255, 255, 255, 0.5)
 
-            border: none
+          border: none
 
 @media (min-width: $desktop-width)
 
@@ -76,3 +76,12 @@
         left: 30px
       & a
         padding: 25px 31px 23px
+      & a[href]
+        &:active,
+        &:hover,
+        &:focus
+          color: #000000
+
+          background-color: #ffffff
+        &:active
+          color: rgba(0, 0, 0, 0.5)

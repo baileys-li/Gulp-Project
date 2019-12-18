@@ -1,31 +1,29 @@
 mixin siteListItem(href="#", text="ссылка")
-    - var className = "site-list__item";
+  - var className = "site-list__item";
 
-    if (href == currentPage)
-        li(class= className +' ' + className+'--active')
-            a= text
-    else
-        li(class=className)
-            a(href=href)= text
+  if (href == currentPage)
+    li(class= className +' ' + className+'--active')
+      a= text
+  else
+    li(class=className)
+      a(href=href)= text
 
-            
+
 header.page-header
-    a._logo
-        include ../img/logo.svg
-           
-    nav.main-nav.-closed.-nojs
-        button(type="button")._toggle
-            span.visually-hidden Открыть меню
-        ._wrapper
-            ul._list.site-list
-                +siteListItem('/index.html', 'Главная')
-                +siteListItem('/works.html', 'Наши работы')
-                +siteListItem('/order.html', 'Записаться')
-                +siteListItem('/contacts.html', 'Контакты')
-                +siteListItem('#', 'HTML Academy')
-            ul._list.user-list
-                li.user-list__item
-                    a(href="/login.html").user-list__login 
-                        include ../img/login.svg
-                    
-                        | Вход
+  a._logo
+    include ../img/logo.svg
+  nav.main-nav.-closed.-nojs
+    button(type="button")._toggle
+      span.visually-hidden Открыть меню
+    ._wrapper
+        ul._list.site-list
+          +siteListItem('/index.html', 'Главная')
+          +siteListItem('/works.html', 'Наши работы')
+          +siteListItem('/order.html', 'Записаться')
+          +siteListItem('/contacts.html', 'Контакты')
+          +siteListItem('#', 'HTML Academy')
+        ul._list.user-list
+          li.user-list__item
+            a(href="/login.html").user-list__login
+                include ../img/login.svg
+                | Вход

@@ -38,7 +38,7 @@ input[type="radio"].visually-hidden
 .button
   display: block
   padding: 13px
-  // box-sizing: border-box
+  box-sizing: border-box
 
   font-weight: 700
   text-align: center
@@ -47,7 +47,11 @@ input[type="radio"].visually-hidden
   text-decoration: none
 
   border: 1px solid darken($bg-lightgrey, 10%)
-  // width: 100%
+  &:hover, &:focus
+    border: 1px solid darken($bg-lightgrey, 20%)
+  &:active
+    color: rgba(0, 0, 0, 0.5)
+    background-color: darken($bg-lightgrey, 20%)
 
 @import "./includes/container"
 // * Header *

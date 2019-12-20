@@ -13,10 +13,12 @@
     justify-content: space-between
     align-items: flex-start
     margin-bottom: 15px
-    border-bottom: 1px solid darken($bg-lightgrey, 10%)
     padding-bottom: 20px
+
+    border-bottom: 1px solid darken($bg-lightgrey, 10%)
     &:last-child
       border-bottom: none
+
   &__date
     position: relative
     display: block
@@ -38,6 +40,23 @@
     display: block
   &__text
     margin: 0
+
+  &__item
+    &:hover,
+    &:hover
+      color: $accent-color
+      text-decoration: underline
+      & .news__date
+        background-color: $accent-color
+        &::after
+          background-color: $accent-color
+
+    &:active
+      color: darken($accent-color, 10%)
+      & .news__date
+        background-color: darken($accent-color, 10%)
+        &::after
+          background-color: darken($accent-color, 10%)
 
 @media (min-width: $tablet-width)
   .news

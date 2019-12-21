@@ -53,6 +53,17 @@ input[type="radio"].visually-hidden
     color: rgba(0, 0, 0, 0.5)
     background-color: darken($bg-lightgrey, 20%)
 
+h2
+  font-weight: 700
+  font-size: 30px
+  line-height: 1
+  text-align: center
+  color: #000000
+  text-transform: uppercase
+  @media (min-width: $tablet-width)
+    font-size: 40px
+    text-align: left
+
 @import "./includes/container"
 // * Header *
 @import "./includes/page-header"
@@ -65,7 +76,7 @@ input[type="radio"].visually-hidden
 @import "./includes/advantages"
 @import "./includes/news"
 @import "./includes/reviews"
-
+@import "./includes/order"
 // Footer
 @import "./includes/footer"
 @import "./includes/contacts"

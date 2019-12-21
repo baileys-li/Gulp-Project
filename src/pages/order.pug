@@ -40,21 +40,21 @@ block content
           legend._subtitle  Что-то ещё?
           textarea(name="", cols="30", rows="5" placeholder="Доп. информация для мастера")._input
 
-        fieldset
+        fieldset._beards
           legend._subtitle  Выберите модель бороды:
-          ul
-            each val, index in beards
-              li
-                input(type="radio" name=index value=index)
-                label= val
+          ul._list
+            each name, index in beards
+              li._beard
+                input(type="radio" id="order__"+index name="beard" value=index)
+                label(for="order__"+index)= name
 
-        fieldset
+        fieldset._extra-services
           legend._subtitle  Дополнительные услуги:
-          ul
-            each val in extraServices
-              li
-                input(type="checkbox" name="admiral" value="admiral")
-                span= val
+          ul._list
+            each val, index in extraServices
+              li._extra-service
+                input(type="checkbox" id="order__extra-service"+index name="order__extra-service"+index value="order__extra-service"+index)
+                label(for="order__extra-service"+index)= val
 
         button.button(type='submit') Отправить заявку
 

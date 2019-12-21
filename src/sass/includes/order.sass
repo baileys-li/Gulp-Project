@@ -1,0 +1,32 @@
+.order
+  padding: 34px 0
+  +light-mode
+  & fieldset
+    border: none
+  &__subtitle
+    font-size: 20px
+    text-transform: uppercase
+    line-height: 1.35
+    text-align: center
+  & fieldset
+    padding: 0
+    margin: 0
+  &__input
+    box-sizing: border-box
+    background-color: #ffffff
+    padding: 15px 18px
+    border: 1px solid lighten($accent-color, 40%)
+    margin-bottom: 5px
+    width: 100%
+    &::placeholder
+      color: #000
+    &:hover
+      border: 1px solid lighten($accent-color, 20%)
+
+    &:active,
+    &:focus
+      border: 1px solid lighten($bg-darkgrey, 20%)
+      outline: none
+
+  &__list
+    +reset-list

@@ -1,37 +1,62 @@
-extends ./layout/page 
+extends ./layout/page
 
 block variables
-    -currentPage = "/order.html";
+  -currentPage = "/order.html";
+
+  -let beards = {admiral: 'адмирал',  lumberjack: 'лесоруб', polarman: 'полярник', boyar: 'боярин', druid: 'мудрец'};
+  -let extraServices = ['Подкрасить бороду', 'Накрутить усы', 'Причесать бороду', 'Подровнять виски', 'Убрать седину', 'Отполировать лысину'];
+
 
 block title
     title Записаться на стрижку
 
-
 block content
-    h1 Запись на стрижку
-    a(href="/index.html") На главную
-    form(action="" method="method")
-        input(type="text" name="surname" placeholder="Фамилия")
-        input(type="text" name="name" placeholder="Имя" required)
-        input(type="text" name="patronymic" placeholder="Отчество")
-    
-        input(type="tel" name="phone" placeholder="Контактный телефон")
-        input(type="email" name="email" placeholder="Контактный e-mail")
 
-        textarea(name="", cols="30", rows="5" placeholder="Доп. информация для мастера") 
+  mixin addInput(name, id, isRequired = false, inputType="text")
+    if isRequired
+      label(for="order__"+id).visually-hidden= name
+      input(type=inputType id="order__"+id name=id placeholder=name required).order__input
+    else
+      label(for="order__"+id).visually-hidden= name
+      input(type=inputType id="order__"+id name=id placeholder=name).order__input
+
+  section.order
+    ._wrapper.container
+      h2._title Запись на стрижку
+      a(href="/index.html")._to-home.button На главную
+      form(action="" method="method")._form
+        fieldset._identity
+          legend._subtitle Представтесь
+          +addInput('Фамилия', 'surname')
+          +addInput('Имя', 'name', true)
+          +addInput('Отчество', 'patronymic')
+
+        fieldset._contacts
+          legend._subtitle  Как с вами связаться?
+          +addInput('Контактный телефон', 'phone', true, 'tel')
+          +addInput('Контактный e-mail', 'email', false, 'email')
+
+        fieldset._comment
+          legend._subtitle  Что-то ещё?
+          textarea(name="", cols="30", rows="5" placeholder="Доп. информация для мастера")._input
 
         fieldset
-            legend Выберите модель бороды:
-            ul
-                li 
-                    input(type="radio" name="admiral" value="admiral" checked) 
-                    | адмирал 
-                li
-                    input(type="radio" name="admiral" value="admiral" checked) 
-                    | лесоруб полярник боярин мудрец
-                li
-                li
-                li
-            
+          legend._subtitle  Выберите модель бороды:
+          ul
+            each val, index in beards
+              li
+                input(type="radio" name=index value=index)
+                label= val
 
-        
+        fieldset
+          legend._subtitle  Дополнительные услуги:
+          ul
+            each val in extraServices
+              li
+                input(type="checkbox" name="admiral" value="admiral")
+                span= val
+
+        button.button(type='submit') Отправить заявку
+
+
+

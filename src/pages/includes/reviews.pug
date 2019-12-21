@@ -1,9 +1,9 @@
 mixin reviewsItem(img, alt, name, text)
-  blockquote.reviews__item.slider__item.slider__item--nojs
-    figure.reviews__author-picture
+  figure.reviews__item.slider__item.slider__item--nojs
+    picture.reviews__author-picture
       img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
-    .reviews__item-wrapper
-      cite.reviews__author-name= name
+    blockquote.reviews__item-wrapper
+      figcaption.reviews__author-name= name
       p.reviews__text= text
 
 section.reviews

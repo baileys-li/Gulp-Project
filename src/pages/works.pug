@@ -1,4 +1,4 @@
-extends ./layout/page 
+extends ./layout/page
 
 block variables
     -currentPage = "/works.html";
@@ -6,5 +6,38 @@ block variables
 block title
     title Наши работы
 
-
+//- imgSource, name, text,
 block content
+
+  mixin addWorkItem(name, text, imgSource, services = [], isWorkOfMonth = false)
+    -var modifier = ""
+    if isWorkOfMonth
+      -modifier = " works__item--work-of-month"
+    li(class="works__item" + modifier)
+      figure
+        picture.works__picture
+          img(src="/img/works/" + imgSource +".jpg", alt="Пример нашей работы").works__photo
+        .works__wrapper
+          figcaption.works__name= name
+          blockquote.works__text= text
+        ul.works__services
+          each service in services
+            case service
+              when "haircut"
+                li.works__service.works__service--haircut Стрижка
+              when "shaving"
+                li.works__service.works__service--shaving Бритьё
+              when "mustache"
+                li.works__service.works__service--mustache Усы
+              when "beard"
+                li.works__service.works__service--beard Борода
+
+  section.works
+    ._wrapper.container
+      h2._title Наши работы
+      a(href="/index.html")._to-home.button На главную
+      ul._list
+        +addWorkItem("Лжепётр Мчиславский", "Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!", "photo-1", ["haircut", "shaving", "mustache"],true)
+        +addWorkItem("Саша Мальцев", "Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?", "photo-2", ["haircut"])
+        +addWorkItem("Владимир Иваныч", "К зимнему сезону — готов!", "photo-3", ["beard", "mustache"])
+        +addWorkItem("Винстон Синий", "Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!", "photo-4", ["haircut"])

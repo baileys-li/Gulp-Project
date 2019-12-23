@@ -14,12 +14,11 @@ block content
     if isWorkOfMonth
       -modifier = " works__item--work-of-month"
     li(class="works__item" + modifier)
-      figure
-        picture.works__picture
-          img(src="/img/works/" + imgSource +".jpg", alt="Пример нашей работы").works__photo
-        .works__wrapper
-          figcaption.works__name= name
-          blockquote.works__text= text
+      picture.works__picture
+        img(src="/img/works/" + imgSource +".jpg", alt="Пример нашей работы").works__photo
+      figure.works__info
+        figcaption.works__name= name
+        blockquote.works__text= text
         ul.works__services
           each service in services
             case service

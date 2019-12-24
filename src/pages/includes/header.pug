@@ -8,8 +8,11 @@ mixin siteListItem(href="#", text="ссылка")
     li(class=className)
       a(href=href)= text
 
+-var mainPageMod ="";
+if currentPage == "/index.html"
+  - mainPageMod = "page-header--main-page";
 
-header.page-header
+header(class=mainPageMod).page-header
   a._logo
     include ../img/logo.svg
   nav.main-nav.-closed.-nojs

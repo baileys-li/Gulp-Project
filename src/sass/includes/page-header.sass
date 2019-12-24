@@ -18,7 +18,7 @@
     &__logo
       order: 2
       width: 100%
-      height: 400px
+      height: 214px
 
       background-color: #000000
       background-image: url("/img/bg-header.jpg")
@@ -34,10 +34,13 @@
       &-barbershop
         display: inline-block
 
+    &--main-page &__logo
+      height: 400px
+
 @media (min-width: $desktop-width)
   .page-header
     &__logo
-      height: 648px
+      height: 308px
 
       background-position: center 0
       background-size: cover
@@ -46,3 +49,5 @@
         margin-top: 57px
       &-mustache
         display: inline-block
+    &--main-page &__logo
+      height: 648px

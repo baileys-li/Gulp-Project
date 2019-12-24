@@ -32,3 +32,19 @@
 =tablet-container()
   width: 640px / $tablet-width * 100%
   max-width: 960px
+
+=first-inner-page()
+  @media (min-width: $tablet-width)
+    position: relative
+    &::before
+      content: ""
+      position: absolute
+      height: 42px
+      background-color: $bg-lightgrey
+      width: 100%
+      top: -41px
+      clip-path: polygon(0% 0%, 50% 100%, 100% 0, 100% 100%, 0 100%)
+  @media (min-width: $desktop-width)
+    &::before
+      height: 65px
+      top: -65px

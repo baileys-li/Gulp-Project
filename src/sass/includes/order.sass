@@ -1,6 +1,11 @@
 .order
   padding: 34px 0
   +light-mode
+  +first-inner-page
+  &__title
+    margin: 0 0 30px
+  &__to-home
+    margin: 0 0 30px
   & fieldset
     border: none
   &__subtitle
@@ -30,3 +35,10 @@
 
   &__list
     +reset-list
+
+  &__beards
+    display: flex
+  &__submit
+    width: 100%
+    color: #fff
+    background-color: $accent-color

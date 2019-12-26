@@ -61,6 +61,9 @@
   &__services
     display: flex
     flex-wrap: wrap
+    width: 80%
+    max-width: 350px
+    justify-content: space-between
     +reset-list
 
   &__service
@@ -69,7 +72,7 @@
     text-transform: uppercase
     line-height: 1.688
 
-    margin-right: 35px
+    // margin-right: 35px
     &::before
       position: absolute
       left: 0
@@ -103,21 +106,25 @@
         &::before
           top: 7%
     &__picture
-      width: 42%
       height: auto
     &__info
       border-top-width: 1px
       border-left-width: 0
-      width: 58%
       padding: 45px 50px
       display: flex
       flex-direction: column
-      // align-items: flex-start
 
     &__services
       margin-top: auto
     &__services
       margin-bottom: 7px
+
+@media (min-width: $tablet-width) and (max-width: $tablet-width-only)
+  .works
+    &__picture
+      width: 42%
+    &__info
+      width: 58%
 
 @media (min-width: $desktop-width)
   .works
@@ -125,5 +132,24 @@
       grid-template-columns: repeat(3, 1fr)
       grid-gap: 40px
     &__item
+      flex-direction: column
+
       &--work-of-month
+        border-top-width: 1px
+        border-left-width: 0px
+        flex-direction: row
         grid-column: 1/4
+
+        &::before
+          right: 0
+          clip-path: polygon(100% 0%, 100% 100%, 4% 100%, 0% 50%, 4% 0%)
+    &__info
+      border-top-width: 0px
+      border-left-width: 1px
+      height: 100%
+      padding: 34px 35px
+    &__item--work-of-month &__info
+      padding-top: 130px
+      border-top-width: 1px
+      border-left-width: 0px
+      height: auto

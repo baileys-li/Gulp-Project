@@ -1,0 +1,25 @@
+- var index = 1;
+mixin addPriceItem (name, price, isWash = false)
+  tr.price__item
+    td.price__service-id= index
+    - index++
+    td.price__service-name= name
+    if isWash
+      td.price__service-wash-option с мытьём головы
+    else
+      td.price__service-wash-option без мытья
+    td.price__service-price= price
+
+
+section.price
+  ._wrapper.container
+    h2._title Прейскурант
+    table._table
+      tbody
+        +addPriceItem('Классическая стрижка', '1 500', true)
+        +addPriceItem('Современный вариант', '1 500', true)
+        +addPriceItem('Индивидуальный подход', '2 000', true)
+        +addPriceItem('Бритьё бороды', '500')
+        +addPriceItem('Бритьё головы', '1 000', true)
+
+    p._discount С 10:00 до 14:00 скидка 20%

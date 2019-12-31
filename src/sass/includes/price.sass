@@ -1,0 +1,68 @@
+.price
+  background-color: lighten($bg-darkgrey, 10%)
+  padding-top: 70px
+  padding-bottom: 20px
+  position: relative
+  +triangle-tail(35px, lighten($bg-darkgrey, 10%))
+  &__title
+    color: #f7f4f1
+    margin: 0 0 35px
+
+  &__table
+    width: 100%
+    font-size: 20px
+
+  &__service-name
+    font-weight: bold
+
+  &__discount
+    border: 1px solid lighten($bg-darkgrey, 30%)
+    padding: 25px 40px
+    padding-left: 40%
+    position: relative
+    margin-top: 25px
+    min-height: 90px
+    box-sizing: border-box
+    &::before
+      position: absolute
+      width: 56px
+      height: 56px
+      content: url("/img/clock.svg")
+      left: 10%
+      top: 22px
+      // background-color: #fff
+
+@media (max-width: $mobile-width-only)
+  .price
+    &__service-id
+      display: none
+
+    &__service-name
+      display: block
+    &__service-wash-option
+      display: block
+      margin-bottom: 15px
+      &::before
+        content: '('
+      &::after
+        content: ')'
+    &__service-price
+      text-align: right
+      vertical-align: top
+
+@media (min-width: $tablet-width)
+  .price
+    &__table
+      border-collapse: collapse
+      // width: 100%
+
+    &__service td
+      border: 1px solid lighten($bg-darkgrey, 30%)
+      padding: 12px 19px
+
+    &__service-id
+      color: lighten($bg-darkgrey, 30%)
+      text-align: center
+
+    &__service-name
+      font-weight: bold

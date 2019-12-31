@@ -1,6 +1,6 @@
 - var index = 1;
 mixin addPriceItem (name, price, isWash = false)
-  tr.price__item
+  tr.price__service
     td.price__service-id= index
     - index++
     td.price__service-name= name
@@ -8,7 +8,7 @@ mixin addPriceItem (name, price, isWash = false)
       td.price__service-wash-option с мытьём головы
     else
       td.price__service-wash-option без мытья
-    td.price__service-price= price
+    td.price__service-price= price + ' руб.'
 
 
 section.price
@@ -22,4 +22,4 @@ section.price
         +addPriceItem('Бритьё бороды', '500')
         +addPriceItem('Бритьё головы', '1 000', true)
 
-    p._discount С 10:00 до 14:00 скидка 20%
+    p._discount С 10:00 до 14:00 <br> скидка 20%

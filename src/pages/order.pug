@@ -26,18 +26,18 @@ block content
       a(href="/index.html")._to-home.button На главную
       form(action="" method="method")._form
         fieldset._identity
-          legend._subtitle Представтесь
+          legend._subtitle.visually-hidden Представтесь
           +addInput('Фамилия', 'surname')
           +addInput('Имя', 'name', true)
           +addInput('Отчество', 'patronymic')
 
         fieldset._contacts
-          legend._subtitle  Как с вами связаться?
+          legend._subtitle.visually-hidden  Как с вами связаться?
           +addInput('Контактный телефон', 'phone', true, 'tel')
           +addInput('Контактный e-mail', 'email', false, 'email')
 
         fieldset._comment
-          legend._subtitle  Что-то ещё?
+          legend._subtitle.visually-hidden  Что-то ещё?
           textarea(name="", cols="30", rows="5" placeholder="Доп. информация для мастера")._input
 
         fieldset._beards
@@ -45,8 +45,11 @@ block content
           ul._list
             each name, index in beards
               li._beard
-                input(type="radio" id="order__"+index name="beard" value=index)
-                label(for="order__"+index)= name
+                if index == 'admiral'
+                  input(type="radio" id="order__"+index name="beard" value=index checked)
+                else
+                  input(type="radio" id="order__"+index name="beard" value=index)
+                label(for="order__"+index class="order__"+index)= name
 
         fieldset._extra-services
           legend._subtitle  Дополнительные услуги:

@@ -27,14 +27,16 @@ block content
       form(action="" method="method")._form
         fieldset._identity
           legend._subtitle.visually-hidden Представтесь
-          +addInput('Фамилия', 'surname')
-          +addInput('Имя', 'name', true)
-          +addInput('Отчество', 'patronymic')
+          ._identity-wrapper
+            +addInput('Фамилия', 'surname')
+            +addInput('Имя', 'name', true)
+            +addInput('Отчество', 'patronymic')
 
         fieldset._contacts
           legend._subtitle.visually-hidden  Как с вами связаться?
-          +addInput('Контактный телефон', 'phone', true, 'tel')
-          +addInput('Контактный e-mail', 'email', false, 'email')
+          ._contacts-wrapper
+            +addInput('Контактный телефон', 'phone', true, 'tel')
+            +addInput('Контактный e-mail', 'email', false, 'email')
 
         fieldset._comment
           legend._subtitle.visually-hidden  Что-то ещё?

@@ -13,9 +13,9 @@
     display: grid
     grid-row-gap: 35px
   & fieldset
-    border: none
-    padding: 0
-    margin: 0
+    border: inherit
+    padding: inherit
+    margin: inherit
   &__subtitle
     font-size: 20px
     text-transform: uppercase
@@ -42,6 +42,8 @@
   &__identity-wrapper, &__contacts-wrapper
     display: grid
     grid-row-gap: 5px
+  &__comment &__input
+    resize: none
 
   &__list
     +reset-list
@@ -87,6 +89,7 @@
   &__extra-services &__list
     display: grid
     grid-row-gap: 20px
+    margin-bottom: 25px
 
   &__extra-service label
     display: flex
@@ -115,10 +118,15 @@
 
 @media (min-width: $tablet-width)
   .order
+    padding: 55px 0 75px
     &__wrapper
       grid-template-columns: 75% 25%
+      font-size: 24px
+    &__title
+      margin: auto 0
     &__to-home
       order: 0
+      font-size: 18px
 
     &__subtitle
       display: flex
@@ -137,10 +145,7 @@
         margin-left: 25px
 
     &__input
-      font-size: 24px
       padding: 18px 20px
-    & label
-      font-size: 24px
     &__form
       grid-column: 1/3
     &__identity-wrapper
@@ -148,6 +153,8 @@
     &__contacts-wrapper
       grid-row-gap: 35px
 
+    &__subtitle
+      padding-top: 25px
     &__extra-services &__list
       grid-template-columns: 1fr 1fr
 

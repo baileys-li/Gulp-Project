@@ -4,7 +4,8 @@ const gulp = require("gulp"),
   sass = require("gulp-sass"),
   browserSync = require("browser-sync").create(),
   pug = require("gulp-pug"),
-  pugbem = require("gulp-pugbem");
+  pugbem = require("gulp-pugbem"),
+  minify = require("gulp-csso");
 
 //** Compile .pug files **/
 gulp.task("pug", function() {
@@ -25,6 +26,7 @@ gulp.task("sass", function() {
   return gulp
     .src("./src/sass/*.sass")
     .pipe(sass())
+    .pipe(minify())
     .pipe(gulp.dest("./public/css"))
     .pipe(browserSync.stream());
 });

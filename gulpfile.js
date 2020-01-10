@@ -6,7 +6,8 @@ const gulp = require("gulp"),
   pug = require("gulp-pug"),
   pugbem = require("gulp-pugbem"),
   minify = require("gulp-csso"),
-  imagemin = require("gulp-imagemin");
+  imagemin = require("gulp-imagemin"),
+  webp = require("gulp-webp");
 
 //** Compile .pug files **/
 gulp.task("pug", function() {
@@ -43,6 +44,13 @@ gulp.task("images", function() {
         imagemin.svgo()
       ])
     )
+    .pipe(gulp.dest("./public/img"));
+});
+
+gulp.task("webp", function() {
+  return gulp
+    .src("./src/img/**/*.{png,jpg}")
+    .pipe(webp({ quality: 90 }))
     .pipe(gulp.dest("./public/img"));
 });
 

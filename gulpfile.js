@@ -5,7 +5,8 @@ const gulp = require("gulp"),
   browserSync = require("browser-sync").create(),
   pug = require("gulp-pug"),
   pugbem = require("gulp-pugbem"),
-  minify = require("gulp-csso");
+  minify = require("gulp-csso"),
+  imagemin = require("gulp-imagemin");
 
 //** Compile .pug files **/
 gulp.task("pug", function() {
@@ -29,6 +30,20 @@ gulp.task("sass", function() {
     .pipe(minify())
     .pipe(gulp.dest("./public/css"))
     .pipe(browserSync.stream());
+});
+
+//** Image Optimization **/
+gulp.task("images", function() {
+  return gulp
+    .src("./src/img/**/*.{png,jpg,svg}")
+    .pipe(
+      imagemin([
+        imagemin.optipng({ optimizationLevel: 3 }),
+        imagemin.jpegtran({ progressive: true }),
+        imagemin.svgo()
+      ])
+    )
+    .pipe(gulp.dest("./public/img"));
 });
 
 //** Other tasks **/

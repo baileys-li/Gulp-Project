@@ -1,0 +1,21 @@
+section.modal-login.modal-login--show
+  h2._title Личный кабинет
+  p._subtitle Введите пожалуйста свой логин и пароль
+  form(action="htttp://echo.htmlacademy.ru" method="post")._form
+    p
+      label(for="user-login").visually-hidden Логин
+      input(id="user-login", type="text", name="login", placeholder="Логин")._input
+    p
+      label(for="user-password").visually-hidden Пароль
+      input(id="user-password", type="password", name="password", placeholder="Пароль")._input
+    p._password-info
+      label._checkbox
+        input(type="checkbox", name="remember").visually-hidden
+        span._checkbox-indicator
+        | Запомните меня
+      a(href="#")._restore Я забыл пароль!
+
+    button._enter.button(type='submit') Войти
+    button._close.button(type='button') Закрыть
+
+

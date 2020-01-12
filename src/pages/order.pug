@@ -15,10 +15,10 @@ block content
   mixin addInput(name, id, isRequired = false, inputType="text")
     if isRequired
       label(for="order__"+id).visually-hidden= name
-      input(type=inputType id="order__"+id name=id placeholder=name required).order__input
+      input(type=inputType id="order__"+id name=id placeholder=name required).order__input.input
     else
       label(for="order__"+id).visually-hidden= name
-      input(type=inputType id="order__"+id name=id placeholder=name).order__input
+      input(type=inputType id="order__"+id name=id placeholder=name).order__input.input
 
   section.order
     ._wrapper.container

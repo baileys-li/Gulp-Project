@@ -2,10 +2,11 @@
 
 const gulp = require("gulp"),
   sass = require("gulp-sass"),
-  browserSync = require("browser-sync").create(),
+  minify = require("gulp-csso"),
+  autoprefixer = require("gulp-autoprefixer"),
   pug = require("gulp-pug"),
   pugbem = require("gulp-pugbem"),
-  minify = require("gulp-csso"),
+  browserSync = require("browser-sync").create(),
   imagemin = require("gulp-imagemin"),
   webp = require("gulp-webp");
 
@@ -28,6 +29,11 @@ gulp.task("sass", function() {
   return gulp
     .src("./src/sass/*.sass")
     .pipe(sass())
+    .pipe(
+      autoprefixer({
+        cascade: false
+      })
+    )
     .pipe(minify())
     .pipe(gulp.dest("./public/css"))
     .pipe(browserSync.stream());

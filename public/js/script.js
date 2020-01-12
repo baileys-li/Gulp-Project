@@ -75,3 +75,21 @@ function makeSlider(blockName, controlButton = false) {
 // make slider in next blocks
 makeSlider(advantages);
 makeSlider(reviews, true);
+
+// * Login Modal *
+
+var userLink = document.querySelector(".user-list__login"),
+  modal = document.querySelector(".modal-login"),
+  close = modal.querySelector(".modal-login__close");
+
+modal.classList.remove("modal-login--nojs");
+
+userLink.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  modal.classList.add("modal-login--show");
+});
+
+close.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  modal.classList.remove("modal-login--show");
+});

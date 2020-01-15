@@ -1,7 +1,7 @@
 // * Open Hamburger Menu *
 
-var navMain = document.querySelector(".main-nav");
-var navToggle = navMain.querySelector(".main-nav__toggle");
+var navMain = document.querySelector(".main-nav"),
+  navToggle = navMain.querySelector(".main-nav__toggle");
 
 navMain.classList.remove("main-nav--nojs");
 
@@ -15,7 +15,54 @@ navToggle.addEventListener("click", function() {
   }
 });
 
+// * Login Modal *
+
+var userLink = document.querySelector(".user-list__login"),
+  modal = document.querySelector(".modal-login"),
+  close = modal.querySelector(".modal-login__close");
+
+var login = modal.querySelector("#user-login"),
+  password = modal.querySelector("#user-password");
+
+var isStorageSupport = true,
+  storage = "";
+
+try {
+  storage = localStorage.getItem("login");
+} catch (err) {
+  isStorageSupport = false;
+}
+
+modal.classList.remove("modal-login--nojs");
+
+userLink.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  modal.classList.add("modal-login--show");
+
+  if (storage) {
+    login.value = storage;
+    password.focus();
+  } else {
+    login.focus();
+  }
+});
+
+close.addEventListener("click", function(evt) {
+  evt.preventDefault();
+  modal.classList.remove("modal-login--show");
+});
+
+window.addEventListener("keydown", function(evt) {
+  if (evt.keyCode === 27) {
+    evt.preventDefault();
+  }
+  if (modal.classList.contains("modal-login--show")) {
+    modal.classList.remove("modal-login--show");
+  }
+});
+
 // * Slider *
+
 // Find block with slider
 var advantages = document.querySelector(".advantages"),
   reviews = document.querySelector(".reviews");
@@ -75,49 +122,3 @@ function makeSlider(blockName, controlButton = false) {
 // make slider in next blocks
 makeSlider(advantages);
 makeSlider(reviews, true);
-
-// * Login Modal *
-
-var userLink = document.querySelector(".user-list__login"),
-  modal = document.querySelector(".modal-login"),
-  close = modal.querySelector(".modal-login__close");
-
-var login = modal.querySelector("#user-login"),
-  password = modal.querySelector("#user-password");
-
-var isStorageSupport = true,
-  storage = "";
-
-try {
-  storage = localStorage.getItem("login");
-} catch (err) {
-  isStorageSupport = false;
-}
-
-modal.classList.remove("modal-login--nojs");
-
-userLink.addEventListener("click", function(evt) {
-  evt.preventDefault();
-  modal.classList.add("modal-login--show");
-
-  if (storage) {
-    login.value = storage;
-    password.focus();
-  } else {
-    login.focus();
-  }
-});
-
-close.addEventListener("click", function(evt) {
-  evt.preventDefault();
-  modal.classList.remove("modal-login--show");
-});
-
-window.addEventListener("keydown", function(evt) {
-  if (evt.keyCode === 27) {
-    evt.preventDefault();
-  }
-  if (modal.classList.contains("modal-login--show")) {
-    modal.classList.remove("modal-login--show");
-  }
-});

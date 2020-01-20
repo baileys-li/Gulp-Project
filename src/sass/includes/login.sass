@@ -5,24 +5,25 @@
   background-image: url(../img/locked.svg)
 
 .modal-login
-  position: absolute
-  top: 136px
-  left: 50%
-  z-index: 5
-
   display: none
   box-sizing: border-box
   width: 100%
   max-width: 460px
+  margin: 0 auto
   padding: 30px 20px
-
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7)
-  transform: translateX(-50%)
 
   +light-mode
 
   &--show
+    position: absolute
+    top: 136px
+    left: 50%
+    z-index: 5
+
     display: block
+
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7)
+    transform: translateX(-50%)
 
     animation: bounce 2s
 

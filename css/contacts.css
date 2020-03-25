@@ -1,0 +1,6 @@
+.contacts {
+  background: red; }
+  .contacts__title {
+    margin-bottom: 10px; }
+  .contacts__text {
+    margin: 0 0 18px; }

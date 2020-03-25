@@ -1,7 +1,7 @@
 mixin reviewsItem(img, alt, name, text)
   figure.reviews__item.slider__item.slider__item--nojs
     picture.reviews__author-picture
-      img(src="/img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
+      img(src="img/reviews/"+img+".jpg", width="50", height="33", alt=alt).reviews__author-image
     blockquote.reviews__item-wrapper
       figcaption.reviews__author-name= name
       p.reviews__text= text

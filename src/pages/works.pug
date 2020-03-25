@@ -15,7 +15,7 @@ block content
       -modifier = " works__item--work-of-month"
     li(class="works__item" + modifier)
       picture.works__picture
-        img(src="/img/works/" + imgSource +".jpg", alt="Пример нашей работы").works__photo
+        img(src="img/works/" + imgSource +".jpg", alt="Пример нашей работы").works__photo
       figure.works__info
         figcaption.works__name= name
         blockquote.works__text= text
@@ -34,7 +34,7 @@ block content
   section.works
     ._wrapper.container
       h2._title Наши работы
-      a(href="/index.html")._to-home.button На главную
+      a(href="index.html")._to-home.button На главную
       ul._list
         +addWorkItem("Лжепётр Мчиславский", "Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!", "photo-1", ["haircut", "shaving", "mustache"],true)
         +addWorkItem("Саша Мальцев", "Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?", "photo-2", ["haircut"])

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/normalize.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;display=swap&amp;subset=cyrillic"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <meta name="theme-color" content="#292929"/>
     <title>Наши работы</title>
   </head>
   <body>
@@ -166,8 +167,8 @@
                 <li class="site-list__item"><a href="#">HTML Academy</a></li>
           </ul>
           <ul class="main-nav__list user-list">
-            <li class="user-list__item"><a class="user-list__login" href="/login.html">
-                 <svg class="user-list__login-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <li class="user-list__item"><a class="user-list__login" href="#modal-login">
+                <svg class="user-list__login-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
     <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/>
     <polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
 </svg>Вход</a></li>
@@ -176,22 +177,133 @@
       </nav>
     </header>
     <main class="page-main">
+      <h1 class="visually-hidden">Барбершоп «Бородинский» — истинно мужская классика</h1>
+      <section class="works">
+        <div class="works__wrapper container">
+          <h2 class="works__title">Наши работы</h2><a class="works__to-home button" href="/index.html">На главную</a>
+          <ul class="works__list">
+                  <li class="works__item works__item--work-of-month">
+                    <picture class="works__picture"><img class="works__photo" src="/img/works/photo-1.jpg" alt="Пример нашей работы"/></picture>
+                    <figure class="works__info">
+                      <figcaption class="works__name">Лжепётр Мчиславский</figcaption>
+                      <blockquote class="works__text">Где я только не стригся, но так как делаете это вы — не умеет никто другой! Еще раз спасибо и до скорого!</blockquote>
+                      <ul class="works__services">
+                        <li class="works__service works__service--haircut">Стрижка</li>
+                        <li class="works__service works__service--shaving">Бритьё</li>
+                        <li class="works__service works__service--mustache">Усы</li>
+                      </ul>
+                    </figure>
+                  </li>
+                  <li class="works__item">
+                    <picture class="works__picture"><img class="works__photo" src="/img/works/photo-2.jpg" alt="Пример нашей работы"/></picture>
+                    <figure class="works__info">
+                      <figcaption class="works__name">Саша Мальцев</figcaption>
+                      <blockquote class="works__text">Попросил омолодить и омолодили! Кто теперь скажет, что мне 45?</blockquote>
+                      <ul class="works__services">
+                        <li class="works__service works__service--haircut">Стрижка</li>
+                      </ul>
+                    </figure>
+                  </li>
+                  <li class="works__item">
+                    <picture class="works__picture"><img class="works__photo" src="/img/works/photo-3.jpg" alt="Пример нашей работы"/></picture>
+                    <figure class="works__info">
+                      <figcaption class="works__name">Владимир Иваныч</figcaption>
+                      <blockquote class="works__text">К зимнему сезону — готов!</blockquote>
+                      <ul class="works__services">
+                        <li class="works__service works__service--beard">Борода</li>
+                        <li class="works__service works__service--mustache">Усы</li>
+                      </ul>
+                    </figure>
+                  </li>
+                  <li class="works__item">
+                    <picture class="works__picture"><img class="works__photo" src="/img/works/photo-4.jpg" alt="Пример нашей работы"/></picture>
+                    <figure class="works__info">
+                      <figcaption class="works__name">Винстон Синий</figcaption>
+                      <blockquote class="works__text">Как только заростаю и волосы начинают мешать видеть — бегом в Бородинский!</blockquote>
+                      <ul class="works__services">
+                        <li class="works__service works__service--haircut">Стрижка</li>
+                      </ul>
+                    </figure>
+                  </li>
+          </ul>
+        </div>
+      </section>
+      <section class="price">
+        <div class="price__wrapper container">
+          <h2 class="price__title">Прейскурант</h2>
+          <table class="price__table">
+            <tbody>
+                    <tr class="price__service">
+                      <td class="price__service-id">1</td>
+                      <td class="price__service-name">Классическая стрижка</td>
+                      <td class="price__service-wash-option">с мытьём головы</td>
+                      <td class="price__service-price">1 500 руб.</td>
+                    </tr>
+                    <tr class="price__service">
+                      <td class="price__service-id">2</td>
+                      <td class="price__service-name">Современный вариант</td>
+                      <td class="price__service-wash-option">с мытьём головы</td>
+                      <td class="price__service-price">1 500 руб.</td>
+                    </tr>
+                    <tr class="price__service">
+                      <td class="price__service-id">3</td>
+                      <td class="price__service-name">Индивидуальный подход</td>
+                      <td class="price__service-wash-option">с мытьём головы</td>
+                      <td class="price__service-price">2 000 руб.</td>
+                    </tr>
+                    <tr class="price__service">
+                      <td class="price__service-id">4</td>
+                      <td class="price__service-name">Бритьё бороды</td>
+                      <td class="price__service-wash-option">без мытья</td>
+                      <td class="price__service-price">500 руб.</td>
+                    </tr>
+                    <tr class="price__service">
+                      <td class="price__service-id">5</td>
+                      <td class="price__service-name">Бритьё головы</td>
+                      <td class="price__service-wash-option">с мытьём головы</td>
+                      <td class="price__service-price">1 000 руб.</td>
+                    </tr>
+            </tbody>
+          </table>
+          <p class="price__discount">С 10:00 до 14:00 <br> скидка 20%</p>
+        </div>
+      </section>
     </main>
     <footer class="page-footer">
       <div class="page-footer__wrapper">
         <div class="page-footer__contacts contacts"><b class="contacts__title">Барбершоп «Бородинский»</b>
-          <p class="contacts__text">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</p><a class="contacts__phone" href="tel:+78125556666"> <span class="contacts__phone-mobile">Тел.:</span> +7 (812) 555-66-66</a>
+          <p class="contacts__text">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</p><a class="contacts__phone button" href="tel:+78125556666"><span class="contacts__phone-mobile">Тел.:</span> +7 (812) 555-66-66</a>
         </div>
         <div class="page-footer__social social"><b class="social__title">Давайте дружить!</b>
           <ul class="social__list">
-            <li class="social__item"><a class="social__link social__link--vk" href="#">Мы в Вконтакте</a></li>
-            <li class="social__item"><a class="social__link social__link--fb" href="#">Мы в Фейсбуке</a></li>
-            <li class="social__item"><a class="social__link social__link--insta" href="#">Мы в Инстаграме</a></li>
+            <li class="social__item"><a class="social__link social__link--vk button" href="#"> Мы в Вконтакте</a></li>
+            <li class="social__item"><a class="social__link social__link--fb button" href="#"> Мы в Фейсбуке</a></li>
+            <li class="social__item"><a class="social__link social__link--insta button" href="#"> Мы в Инстаграме</a></li>
           </ul>
         </div>
-        <div class="page-footer__copyright copyright"><b class="copyright__text">Разработано:</b><a class="copyright__link" href="#">HTML Academy</a></div>
+        <div class="page-footer__copyright copyright"><b class="copyright__text">Разработано:</b><a class="copyright__link button" href="#"> HTML Academy</a></div>
       </div>
     </footer>
+    <section class="modal-login modal-login--nojs" id="modal-login">
+      <h2 class="modal-login__title">Личный кабинет</h2>
+      <p class="modal-login__subtitle">Введите пожалуйста свой логин и пароль</p>
+      <form class="modal-login__form" action="htttp://echo.htmlacademy.ru" method="post">
+        <p class="modal-login__form-wrapper">
+          <label class="visually-hidden" for="user-login">Логин</label>
+          <input class="modal-login__input input" id="user-login" type="text" name="login" placeholder="Логин"/>
+        </p>
+        <p class="modal-login__form-wrapper">
+          <label class="visually-hidden" for="user-password">Пароль</label>
+          <input class="modal-login__input input" id="user-password" type="password" name="password" placeholder="Пароль"/>
+        </p>
+        <p class="modal-login__password-info">
+          <input class="visually-hidden" id="remember-pass" type="checkbox" name="remember"/>
+          <label class="modal-login__checkbox" for="remember-pass">Запомните меня</label><a class="modal-login__restore" href="#">Я забыл пароль!</a>
+        </p>
+        <button class="modal-login__enter button" type="submit">Войти</button>
+        <button class="modal-login__close button" type="button">Закрыть</button>
+      </form>
+    </section>
     <script src="/js/script.js"></script>
   </body>
 </html>
